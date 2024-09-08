@@ -1,14 +1,42 @@
-div.container {
+div.container-home-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
 }
 
+div.container-item-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+div.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin:0 auto;
+    text-align: left;
+    width: 250px;
+}
+
+select{
+    width:200px;
+    padding:10px;
+    margin-bottom:20px;
+    font-size:20px;
+}
 
 img.box {
     width: 400px;
     height: 400px;
+    border: 5px solid black;
+}
+
+img.bigger-box {
+    width: 600px;
+    height: 600px;
     border: 5px solid black;
 }
 
@@ -39,8 +67,9 @@ div.bold:hover h2{
 
 h2,h3 {
     color: black;
-    font-family:'Times New Roman', Times, serif;
+    font-family: "Arial", sans-serif;
     margin: 2px;
+    font-weight: 100;
 }
 
 /* Doesn't work - ask TA */
@@ -48,5 +77,11 @@ a > h3 {
     text-decoration: none;
 }
 
+h2.center-text {
+    margin-top: 50px;
+    margin-bottom:35px;
+}
 
-
+.text-container {
+    max-width: 250px;
+}

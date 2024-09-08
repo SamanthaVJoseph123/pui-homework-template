@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <meta charset="UTF-8">
-  <title>Specific Item Page</title>
-  
-  <body>
 
-    <h1>Specific Item Page</h1>
+  <head>
+    <link rel="stylesheet" href="./style.css" type="text/css"/>
+  </head>
+
+  <title>
+    Specific Item Page
+  </title>
+
+  <body>
+    <a href="./index.html">
+      <img src="../assets/logo/logo-01.svg" width = "400" alt="Logo" >
+    </a>
+
+    <hr> 
 
     <p>
-        Hello!
+      <!-- And I can link to <a href="./otherpage.html">other pages.</a> -->
+       <nav>
+        <div class="highlight-text center-text">
+          <a href="./index.html">PRODUCT</a>
+        </div>
+        <div class="center-text" >
+          <a href="./otherpage.html">CART</a>
+        </div>
+      </nav>
     </p>
+
+    <h2 class="center-text">Original cinnamon roll</h2>
+    
+    <div class = "container-item-page">
+      <img class = "bigger-box" src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" >
+      <h3 class = "text-container" >Customize our delicious, hand-made cinammon roll to your liking!</h3>
+    </div>
+
+    <div class="dropdown-container">
+      <h2>Glazing:</h2>
+      <select name="glaze" id="glaze">
+        <option value="keep-original">Keep original</option>
+        <option value="sugar-milk">Sugar milk</option>
+        <option value="vanilla-milk">Vanilla milk</option>
+        <option value="double-chocolate">Double Chocolate</option>
+      </select>
+
+      <h2>Pack Size</h2>
+      <select name="pack-size" id="pack-size">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="12">12</option>
+      </select>
+    </div>
+
 
   </body>
 </html>
-
