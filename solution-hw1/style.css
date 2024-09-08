@@ -2,11 +2,9 @@ div.container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 50px;
 }
 
-.center-text {
-    text-align: center;
-}
 
 img.box {
     width: 400px;
@@ -21,8 +19,34 @@ hr {
     margin: 10px 10px;
 }
 
+.highlight-text a {
+    background-color: yellow;
+    display:inline-block;
+}
+
+.center-text {
+    text-align: center;
+}
 
 div.highlight:hover {
     background-color: yellow;
-    padding: 10px;
+    padding: 5px;
 }
+
+div.bold:hover h2{
+    font-weight:bold;
+}
+
+h2,h3 {
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+    margin: 2px;
+}
+
+/* Doesn't work - ask TA */
+a > h3 {
+    text-decoration: none;
+}
+
+
+
