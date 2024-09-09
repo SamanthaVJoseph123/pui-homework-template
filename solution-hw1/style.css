@@ -71,7 +71,7 @@ div.bold:hover h2{
     font-weight:bold;
 }
 
-h2,h3,h4,h5 {
+h2,h3,h4,h5,h6 {
     color: black;
     font-family: "Arial", sans-serif;
     margin: 2px;
@@ -80,7 +80,7 @@ h2,h3,h4,h5 {
 
 /* Doesn't work - ask TA */
 /* I want the price on the items page to not be underlined */
-a > h3 {
+div > a > h3 {
     text-decoration: none;
 }
 
@@ -125,17 +125,18 @@ div.container-cart-page {
     padding-top:30px;
     padding-bottom: 10px;
     align-items: center;
-    /* gap: 50px; */
 }
 
 img.smaller-box {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border: 3px solid black;
 }
 
 .center-text-larger {
     text-align: center;
+    padding-top:5px;
+    padding-bottom:5px;
 }
 
 h2.center-text-cart-page {
@@ -148,8 +149,8 @@ hr.bottom-line{
     height: 5px;
     width: 600px;
     background-color: black;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .container-checkout{
@@ -158,3 +159,6 @@ hr.bottom-line{
     align-items:center;
 }
 
+.underline-text{
+    text-decoration:underline;
+}
