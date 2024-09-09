@@ -89,8 +89,12 @@ h2.center-text {
     margin-bottom:35px;
 }
 
-h3.no-underline{
+a.no-underline{
     text-decoration:none;
+}
+
+h2.underline{
+    text-decoration:underline;
 }
 
 .text-container {
@@ -163,6 +167,9 @@ hr.bottom-line{
     align-items:center;
 }
 
-.underline-text{
+h6.underline{
+    padding-top:2px;
+    padding-bottom:5px;
     text-decoration:underline;
 }
+
