@@ -33,13 +33,13 @@ select{
 img.box {
     width: 400px;
     height: 400px;
-    border: 5px solid black;
+    border: 3px solid black;
 }
 
 img.bigger-box {
     width: 600px;
     height: 600px;
-    border: 5px solid black;
+    border: 3px solid black;
 }
 
 hr {
@@ -80,13 +80,17 @@ h2,h3,h4,h5,h6 {
 
 /* Doesn't work - ask TA */
 /* I want the price on the items page to not be underlined */
-div > a > h3 {
+div > div > a > h3 {
     text-decoration: none;
 }
 
 h2.center-text {
     margin-top: 50px;
     margin-bottom:35px;
+}
+
+h3.no-underline{
+    text-decoration:none;
 }
 
 .text-container {
