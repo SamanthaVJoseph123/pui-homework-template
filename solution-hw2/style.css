@@ -4,7 +4,7 @@ NAME a -> this selector applies to any <a> element that is inside of an element 
 
 */
 
-div.container-home-page-main-elements {
+.container-home-page-main-elements {
     display: flex;
     justify-content:space-evenly;
     flex-wrap:wrap;
@@ -12,7 +12,7 @@ div.container-home-page-main-elements {
     align-items:center;
 }
 
-div.container-item-page-top-element {
+.container-item-page-top-element {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@ div.container-item-page-top-element {
     margin-bottom: 20px;
 }
 
-div.dropdown-container {
+.dropdown-container {
     display: flex;
     flex-direction: column;
     align-items:flex-start;
@@ -37,13 +37,13 @@ select{
     font-size:15px;
 }
 
-img.home-page-box {
+.home-page-box {
     width: 400px;
     height: 400px;
     border: 3px solid black;
 }
 
-img.item-page-box {
+.item-page-box {
     width: 600px;
     height: 600px;
     border: 3px solid black;
@@ -107,7 +107,7 @@ a.no-underline{
     text-decoration:none;
 }
 
-h2.underline{
+.general-underline{
     text-decoration:underline;
 }
 
@@ -130,7 +130,7 @@ h2.underline{
     font-weight:bold;
 }
 
-div.container-item-page-bottom {
+.container-item-page-bottom {
     display: flex;
     flex-direction: row;
     justify-content:center;
@@ -155,7 +155,7 @@ div.container-item-page-bottom {
     flex-direction: column;
 }
 
-div.container-cart-page {
+.container-cart-page {
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -165,13 +165,13 @@ div.container-cart-page {
     align-items: center;
 }
 
-img.cart-page-box {
+.cart-page-box {
     width: 200px;
     height: 200px;
     border: 3px solid black;
 }
 
-hr.bottom-line{
+.bottom-line{
     border: none;
     height: 5px;
     width: 600px;
@@ -186,7 +186,7 @@ hr.bottom-line{
     align-items:center;
 }
 
-h6.underline{
+.underline-cart-page{
     padding-top:2px;
     padding-bottom:5px;
     text-decoration:underline;
