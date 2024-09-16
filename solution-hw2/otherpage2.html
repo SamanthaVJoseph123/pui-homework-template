@@ -11,52 +11,61 @@
   </title>
 
   <body>
-    <a href="./index.html">
-      <img src="../assets/logo/logo-01.svg" width = "400" alt="Logo" >
-    </a>
-
-    <hr> 
-
     <p>
       <!-- And I can link to <a href="./otherpage.html">other pages.</a> -->
-       <nav>
-        <div class="highlight-text center-text">
-          <a href="./index.html">PRODUCT</a>
+       <nav class="nav-container">
+        <div class="highlight-text">
+          <a class="nav-link-format no-underline" href="./index.html">PRODUCTS</a>
         </div>
-        <div class="center-text" >
-          <a href="./otherpage.html">CART</a>
+        <div>
+          <a class="nav-link-format no-underline" href="./otherpage.html">CART</a>
         </div>
       </nav>
     </p>
 
+    <div class="logo-line-container">
+      <a href="./index.html">
+        <img src="../assets/logo/logo-01.svg" width = "600" alt="Logo" >
+      </a>
+      <hr> 
+    </div>
+
     <h2 class="center-text-header">Original cinnamon roll</h2>
     
-    <div class = "container-item-page-top-element">
+    <!-- <div class = "container-item-page-top-element">
       <img class = "item-page-box" src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" >
       <h3 class = "text-container" >Customize our delicious, hand-made cinammon roll to your liking!</h3>
-    </div>
+    </div> -->
 
-    <div class="dropdown-container">
-      <h4>Glazing:</h4>
-      <select name="glaze" id="glaze">
-        <option value="keep-original">Keep original</option>
-        <option value="sugar-milk">Sugar milk</option>
-        <option value="vanilla-milk">Vanilla milk</option>
-        <option value="double-chocolate">Double Chocolate</option>
-      </select>
+    <div class = "container-item-page">
+      <img class = "item-page-box" src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" >
+      <div class="inner-container-item-page">
+        <h3 class = "text-container" >Customize our delicious, hand-made cinammon roll to your liking!</h3>
 
-      <h4>Pack size</h4>
-      <select name="pack-size" id="pack-size">
-        <option value="1">1</option>
-        <option value="3">3</option>
-        <option value="6">6</option>
-        <option value="12">12</option>
-      </select>
-    </div>
+        <div class="dropdown-container">
+          <h4>Glazing:</h4>
+          <select name="glaze" id="glaze">
+            <option value="keep-original">Keep original</option>
+            <option value="sugar-milk">Sugar milk</option>
+            <option value="vanilla-milk">Vanilla milk</option>
+            <option value="double-chocolate">Double Chocolate</option>
+          </select>
+    
+          <h4>Pack size</h4>
+          <select name="pack-size" id="pack-size">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="12">12</option>
+          </select>
+        </div>
 
-    <div class="container-item-page-bottom ">
-      <h4 class="make-bold">$2.49</h4>
-      <h4 class="highlighted-box make-bold">Add to Cart</h4>
+        <div class="container-item-page-bottom ">
+          <h4 class="make-bold">$2.49</h4>
+          <h4 class="highlighted-box make-bold">Add to Cart</h4>
+        </div>
+
+      </div>
     </div>
 
 
