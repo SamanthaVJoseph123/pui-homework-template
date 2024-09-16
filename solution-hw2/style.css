@@ -1,11 +1,17 @@
-div.container-home-page {
+/* REMEMBER: 
+a.NAME -> this selector only applies to <a> elements that have the class NAME
+NAME a -> this selector applies to any <a> element that is inside of an element with the class NAME
+
+*/
+
+div.container-home-page-main-elements {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
 }
 
-div.container-item-page-top {
+div.container-item-page-top-element {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,13 +36,13 @@ select{
     font-size:15px;
 }
 
-img.box {
+img.home-page-box {
     width: 400px;
     height: 400px;
     border: 3px solid black;
 }
 
-img.bigger-box {
+img.item-page-box {
     width: 600px;
     height: 600px;
     border: 3px solid black;
@@ -52,14 +58,6 @@ hr {
     background-color: yellow;
     display:inline-block;
     font-weight:bold;
-}
-
-.center-text {
-    text-align: center;
-    font-family: "Arial", sans-serif;
-    font-weight: 50;
-    padding-top:2px;
-    padding-bottom:10px;
 }
 
 div.highlight:hover {
@@ -78,15 +76,28 @@ h2,h3,h4,h5,h6 {
     font-weight: 50;
 }
 
-/* Doesn't work - ask TA */
-/* I want the price on the items page to not be underlined */
 div > div > a > h3 {
     text-decoration: none;
 }
 
-h2.center-text {
+.center-text-header {
     margin-top: 50px;
     margin-bottom:35px;
+    text-align: center;
+}
+
+.center-text {
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-weight: 50;
+    padding-top:2px;
+    padding-bottom:10px;
+}
+
+.cart-page-price-text {
+    text-align: center;
+    padding-top:5px;
+    padding-bottom:5px;
 }
 
 a.no-underline{
@@ -135,21 +146,10 @@ div.container-cart-page {
     align-items: center;
 }
 
-img.smaller-box {
+img.cart-page-box {
     width: 200px;
     height: 200px;
     border: 3px solid black;
-}
-
-.center-text-larger {
-    text-align: center;
-    padding-top:5px;
-    padding-bottom:5px;
-}
-
-h2.center-text-cart-page {
-    margin-top: 50px;
-    text-align: center;
 }
 
 hr.bottom-line{
