@@ -26,17 +26,25 @@ NAME a -> this selector applies to any <a> element that is inside of an element 
     align-items:flex-start;
     /* margin:0 auto; */
     margin-left: 20px;
-    margin-top: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: left;
     width: 250px;
     /* padding: 30px; */
 }
 
 select{
-    width:250px;
-    /* padding:5px; */
-    /* margin: 20px; */
+    width:350px;
+    /* padding:10px; */
+    margin-top:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    padding: 10px;
     font-size:25px;
+}
+
+.drop-down-title{
+    margin-top: 30px;
 }
 
 .home-page-box {
@@ -77,7 +85,7 @@ div.bold:hover h2{
     font-weight:bold;
 }
 
-h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6 {
     color: black;
     font-family: "Arial", sans-serif;
     margin: 2px;
@@ -118,17 +126,20 @@ a.no-underline{
 }
 
 .text-container {
-    max-width: 320px;
+    max-width: 400px;
     padding: 30px;
+    font-size: 30px;
+    font-family: "Arial", sans-serif;
+    font-weight:normal;
 }
 
 .highlighted-box{
     background-color:yellow;
     border:2px solid black;
-    padding-top: 5px;
-    padding-bottom:5px;
-    padding-left:20px;
-    padding-right:20px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left:30px;
+    padding-right:30px;
     display:inline-block;
 }
 
@@ -142,9 +153,9 @@ a.no-underline{
     justify-content:center;
     align-items:center;
     gap: 20px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding-top: 80px;
+    padding-left: 50px;
+    padding-bottom: 150px;
 }
 
 .container-item-page {
