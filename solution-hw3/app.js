@@ -1,38 +1,80 @@
+let glazingElement = document.querySelector('#glaze-select');
+let sizeElement = document.querySelector('#pack-select');
+
 let baseBunPrice = 2.49;
+// let glazingPrice = 0;
+// let packSizePrice = 0;
+let glazeValue = 0;
+let constValue = 0;
+let totalPrice = 0;
 
+let glazingOptions = [
+    {
+        glazeName: 'Keep Original',
+        glazePrice: 0,
+    },
+    {
+        glazeName: "Sugar Milk",
+        glazePrice: 0,
+    },
+    {
+        glazeName: "Vanilla Milk",
+        glazePrice: 0.5,
+    },
+    {
+        glazeName: "Double Chocolate",
+        glazePrice: 1.50,
+    },
+  ];
 
-function changePrice() {
-    // create two variables to store prices: glazingPrice and packSizePrice
-    // use querySelector() to access the HTML element by the ID attribute
-    //.value is retrieving the value from the selected <option> which has the ID attribute glaze-select
-    const glazingPrice = parseFloat(document.querySelector('#glaze-select').value);
-    const packSizePrice = parseFloat(document.querySelector('#pack-select').value);
+  let sizeOptions = [
+    {
+        sizeName: '1',
+        sizePrice: 1,
+    },
+    {
+        sizeName: "3",
+        sizePrice: 3,
+    },
+    {
+        sizeName: "6",
+        sizePrice: 5,
+    },
+    {
+        sizeName: "12",
+        sizePrice: 10,
+    },
+  ];
 
-
-    // total price calculation
-    const totalPrice = (baseBunPrice + glazingPrice) * packSizePrice;
-
-
-    document.querySelector('#total-price').innerText = "$" + totalPrice.toFixed(2);
-    // use querySelector() again to access the HTML element by the ID attribute
-    // .innerText is setting the value inside the selected HTML element
-    //.toFixed() function ensures the number is rounded TWO digits after the decimal (from resource below)
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+// Glaze Options
+for (let i = 0; i < glazingOptions.length; i++) {
+    var option = document.createElement('option');
+    option.text = glazingOptions[i].glazeName;
+    option.value = glazingOptions[i].glazePrice;
+    glazingElement.add(option);
 }
 
+// Size Options
+for (let i = 0; i < sizeOptions.length; i++) {
+    var option = document.createElement('option');
+    option.text = sizeOptions[i].sizeName;
+    option.value = sizeOptions[i].sizePrice;
+    sizeElement.add(option);
+}
 
-document.querySelector('#glaze-select').addEventListener('change',changePrice);
-document.querySelector('#pack-select').addEventListener('change',changePrice);
-// Notes from Office Hours:
-// Telling the program to listen for a "change", and when this happens, run this function called changePrice
-// Event type: change. Event handler: changePrice.
-// document.querySelector('#pack-select') specifies WHERE the function to apply itself
+// this means the select
+function glazingChange(element){
+    glazeValue = parseFloat(element.value);
+    updateTotalPrice();
+}
 
+// this means the select
+function sizeChange(element){
+    sizeValue = parseFloat(element.value);
+    updateTotalPrice();
+}
 
-
-
-// Ask TA: do we need to include a loop anywhere?
-// What does it mean by: Do not hardcode them into the HTML
-// explain starter code provided to us
-// Ask if we can do it this method
-
+function updateTotalPrice() {
+    totalPrice = (baseBunPrice + glazeValue) * sizeValue;
+    document.querySelector('#total-price').innerText = "$" + totalPrice.toFixed(2);
+}

@@ -45,19 +45,11 @@
 
         <div class="dropdown-container">
           <h2 class="drop-down-title">Glazing:</h2>
-          <select name="glaze-select" id="glaze-select">
-            <option value="0">Keep original</option>
-            <option value="0">Sugar milk</option>
-            <option value="0.50">Vanilla milk</option>
-            <option value="1.50">Double Chocolate</option>
+          <select name="glaze-select" id="glaze-select" onchange="glazingChange(this)">
           </select>
     
           <h2 class="drop-down-title">Pack size</h2>
-          <select name="pack-select" id="pack-select">
-            <option value="1">1</option>
-            <option value="3">3</option>
-            <option value="5">6</option>
-            <option value="10">12</option>
+          <select name="pack-select" id="pack-select" onchange="sizeChange(this)">
           </select>
         </div>
 
