@@ -34,4 +34,5 @@ document.querySelector('#pack-select').addEventListener('change',changePrice);
 // Ask TA: do we need to include a loop anywhere?
 // What does it mean by: Do not hardcode them into the HTML
 // explain starter code provided to us
+// Ask if we can do it this method
 
