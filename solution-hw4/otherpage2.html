@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+
+  <head>
+    <link rel="stylesheet" href="./style.css" type="text/css"/>
+    <script defer src="app.js"></script>
+  </head>
+
+  <title>
+    Specific Item Page
+  </title>
+
+  <body>
+    <p>
+      <div class="nav-container">
+
+       <a href="./index.html">
+         <img src="../assets/logo/logo-01.svg" width = "500" alt="Logo" >
+       </a>
+
+       <div class="outer-nav-container">
+         <div class="inner-nav-container">
+           <div>
+             <a class="highlight-text nav-link-format no-underline make-bold" href="./index.html">PRODUCTS</a>
+           </div>
+   
+           <div>
+             <a class="nav-link-format no-underline" href="./otherpage.html">CART</a>
+           </div>
+         </div>
+ 
+         <hr> 
+
+         <h2 class="center-text-header">Original cinnamon roll</h2>
+
+       </div>
+     </div>
+   </p>
+
+    <div class = "container-item-page">
+      <img class = "item-page-box" src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" >
+      <div class="inner-container-item-page">
+        <h1 class = "text-container" >Customize our delicious, hand-made cinammon roll to your liking!</h1>
+
+        <div class="dropdown-container">
+          <h2 class="drop-down-title">Glazing:</h2>
+          <select name="glaze-select" id="glaze-select" onchange="glazingChange(this)">
+          </select>
+    
+          <h2 class="drop-down-title">Pack size</h2>
+          <select name="pack-select" id="pack-select" onchange="sizeChange(this)">
+          </select>
+        </div>
+
+        <div class="container-item-page-bottom ">
+          <h2 id= "total-price" class="make-bold">$2.49</h2>
+          <h2 class="highlighted-box make-bold">Add to Cart</h2>
+        </div>
+
+      </div>
+    </div>
+
+
+  </body>
+</html>
+
+
 
