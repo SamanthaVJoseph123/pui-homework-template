@@ -8,6 +8,10 @@ let glazeValue = 0;
 let constValue = 0;
 let totalPrice = 0;
 
+//This is an Array of Objects
+//An Array is a data structure used to store multiple items in a single variable
+// Each Item is an Object. Objects are collections of key-value pairs. 
+// Each Object here has two properties: glazeName and glazePrice
 let glazingOptions = [
     {
         glazeName: 'Keep Original',
@@ -48,15 +52,18 @@ let glazingOptions = [
 
 // Glaze Options
 for (let i = 0; i < glazingOptions.length; i++) {
-    var option = document.createElement('option');
+    let option = document.createElement('option');
+    //.createElement is used to create a new HTML element
     option.text = glazingOptions[i].glazeName;
     option.value = glazingOptions[i].glazePrice;
+    //adding properties to each option
     glazingElement.add(option);
+    //adds each option to glazingElement
 }
 
 // Size Options
 for (let i = 0; i < sizeOptions.length; i++) {
-    var option = document.createElement('option');
+    let option = document.createElement('option');
     option.text = sizeOptions[i].sizeName;
     option.value = sizeOptions[i].sizePrice;
     sizeElement.add(option);
@@ -78,4 +85,3 @@ function updateTotalPrice() {
     totalPrice = (baseBunPrice + glazeValue) * sizeValue;
     document.querySelector('#total-price').innerText = "$" + totalPrice.toFixed(2);
 }
-
