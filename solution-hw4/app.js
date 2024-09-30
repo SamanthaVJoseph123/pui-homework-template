@@ -4,14 +4,12 @@ let sizeElement = document.querySelector('#pack-select');
 let baseBunPrice = 2.49;
 // let glazingPrice = 0;
 // let packSizePrice = 0;
-let glazeValue = 0;
-let constValue = 0;
-let totalPrice = 0;
 
-//This is an Array of Objects
-//An Array is a data structure used to store multiple items in a single variable
-// Each Item is an Object. Objects are collections of key-value pairs. 
-// Each Object here has two properties: glazeName and glazePrice
+// let constValue = 0;
+let totalPrice = 0;
+let glazeValue = 0;
+let sizeValue = 1;
+
 let glazingOptions = [
     {
         glazeName: 'Keep Original',
@@ -53,12 +51,9 @@ let glazingOptions = [
 // Glaze Options
 for (let i = 0; i < glazingOptions.length; i++) {
     let option = document.createElement('option');
-    //.createElement is used to create a new HTML element
     option.text = glazingOptions[i].glazeName;
     option.value = glazingOptions[i].glazePrice;
-    //adding properties to each option
     glazingElement.add(option);
-    //adds each option to glazingElement
 }
 
 // Size Options
@@ -69,19 +64,17 @@ for (let i = 0; i < sizeOptions.length; i++) {
     sizeElement.add(option);
 }
 
-// this means the select
 function glazingChange(element){
     glazeValue = parseFloat(element.value);
-    updateTotalPrice();
+    updateTotalPrice(glazeValue, sizeValue);
 }
 
-// this means the select
 function sizeChange(element){
     sizeValue = parseFloat(element.value);
-    updateTotalPrice();
+    updateTotalPrice(glazeValue, sizeValue);
 }
 
-function updateTotalPrice() {
+function updateTotalPrice(glazeValue, sizeValue) {
     totalPrice = (baseBunPrice + glazeValue) * sizeValue;
     document.querySelector('#total-price').innerText = "$" + totalPrice.toFixed(2);
 }
