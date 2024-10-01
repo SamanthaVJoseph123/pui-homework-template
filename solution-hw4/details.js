@@ -11,13 +11,13 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll')
 
-const currentRoll = rolls[rollType];
+const selectedRoll = rolls[rollType];
 
 let cart = [];
 
 const rollName = rollType + " " + "Cinnamon Roll";
-const rollPrice = currentRoll.basePrice;
-const rollImage = "../assets/products/" + currentRoll.imageFile;
+const rollPrice = selectedRoll.basePrice;
+const rollImage = "../assets/products/" + selectedRoll.imageFile;
 
 const rollHeaderElement = document.querySelector('.center-text-header');
 rollHeaderElement.innerText = rollName;
@@ -36,9 +36,8 @@ function addRolltoCart(){
     let sizeType = sizeElement.options[sizeElement.selectedIndex].text;
 
     addedRoll = new Roll(rollType,glazeType,sizeType,baseBunPrice);
-    cart.push(addedRoll)
-    console.log(cart)
-    console.log(glazingElement.options)
+    cart.push(addedRoll);
+    console.log(cart);
 }
 
 //glazingElement.selectedIndex -> gets the index of the selected option in the glazingElement dropdown
