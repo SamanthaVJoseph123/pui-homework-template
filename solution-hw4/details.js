@@ -1,57 +1,44 @@
-// First, we get the query string from the URL. This is the list of parameters
-// that begins with a question mark. (These are known as "search parameters")
 const queryString = window.location.search;
- // Then, we use the query string to create a URLSearchParams object:
 const params = new URLSearchParams(queryString);
-// Finally, we can access the parameter we want using the "get" method:
-const chosenRoll = params.get('roll')
+const rollType = params.get('roll')
 
-// My code below
-const rollData = rolls[chosenRoll];
-
-// // Now, we will use the URL parameter to update our page.
-
-// // Update the header text
-// const headerElement = document.querySelector('#animal-header-text');
-// headerElement.innerText = 'Here is the ' + chosenAnimal + '!'
-const headerElement = document.querySelector ("#roll-header");
-headerElement.innerText = chosenRoll + 'Cinnamon Roll!';
-
-// // Update the image
-// const animalImage = document.querySelector('#animal-img');
-// animalImage.src = './assets/warhol-' + chosenAnimal + '.png';
-// EXAMPLE: img src="../assets/logo/logo-01.svg" 
-const rollImage = document.querySelector('#roll-img');
-rollImage.src = '../assets/assets/products/${rollData.imageFile;}'
-rollImage.alt = '${chosenRoll} cinnamon roll';
-
-// Update this variable
-// QUESTION: use Let here? Or const?
-let baseBunPrice = rollData.baseBunPrice;
-document.querySelector('#total-price').innterText = '$${baseBunPrice.toFixed(2)}';
-
-// QUESTION: do we have to call these functions here?
-glazingChange(document.querySelector('#glaze-select'));
-sizeChange(document.querySelector('#pack-select'))
-updateTotalPrice();
-
-// newly added:
+const currentRoll = rolls[rollType];
 
 let cart = [];
 
-function addToCart(){
-    const selectedGlazing = document.querySelector('#glaze-select').value;
-    const selectedPackSize = document.querySelector('#glaze-select').value;
+const rollName = rollType + " " + "Cinnamon Roll";
+const rollPrice = currentRoll.basePrice;
+const rollImage = "../assets/products/" + currentRoll.imageFile;
 
-    const cartItem = {
-        rollType: rollType,
-        glazing: selectedGlazing,
-        packSize: selectedPackSize,
-        basePrice: baseBunPrice,
-        finalPrice: totalPrice
-    };
+const rollHeaderElement = document.querySelector('.center-text-header');
+rollHeaderElement.innerText = rollName;
 
-    cart.push(cartItem)
+const rollImageElement = document.querySelector('.item-page-box');
+rollImageElement.src = rollImage;
 
-    alert('${chosenRoll} Cinnamon Roll added to cart!')
+const rollPriceElement = document.querySelector('#total-price');
+rollPriceElement = "$" + rollPrice;
+baseBunPrice = rollPrice;
+
+class Roll{
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing = rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
 }
+
+function addRolltoCart(){
+    //add on click to the button so it nows to run this function when you click it
+    //create a class variable and set it equal to roll(blah)
+    //inside roll, the blah needs to be filled out. 
+    //include all the information using the already assigned variables
+    //append that class variable into cart
+    
+    
+
+}
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex
+// Explains the selectedIndex property: Whichever option the user chooses, 
+// with 0 being the first option, it will return that index
