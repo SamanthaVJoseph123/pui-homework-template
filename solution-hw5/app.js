@@ -10,58 +10,36 @@ let totalPrice = 0;
 let glazeValue = 0;
 let sizeValue = 1;
 
-let glazingOptions = [
-    {
-        glazeName: 'Keep Original',
-        glazePrice: 0,
-    },
-    {
-        glazeName: "Sugar Milk",
-        glazePrice: 0,
-    },
-    {
-        glazeName: "Vanilla Milk",
-        glazePrice: 0.5,
-    },
-    {
-        glazeName: "Double Chocolate",
-        glazePrice: 1.50,
-    },
-  ];
+let glazingOptions = {
+    "Keep Original": 0,
+    "Sugar Milk": 0,
+    "Vanilla Milk": 0.5,
+    "Double Chocolate": 1.5
+};
 
-  let sizeOptions = [
-    {
-        sizeName: '1',
-        sizePrice: 1,
-    },
-    {
-        sizeName: "3",
-        sizePrice: 3,
-    },
-    {
-        sizeName: "6",
-        sizePrice: 5,
-    },
-    {
-        sizeName: "12",
-        sizePrice: 10,
-    },
-  ];
+let packSizeOptions = {
+    "1": 1,
+    "3": 3,
+    "6": 5,
+    "12": 10
+};
 
 // Glaze Options
-for (let i = 0; i < glazingOptions.length; i++) {
-    let option = document.createElement('option');
-    option.text = glazingOptions[i].glazeName;
-    option.value = glazingOptions[i].glazePrice;
-    glazingElement.add(option);
-}
+if (glazingElement && sizeElement){
+    for (let glaze in glazingOptions) {
+        let option = document.createElement('option');
+        option.text = glaze;
+        option.value = glazingOptions[glaze];
+        glazingElement.add(option);
+    }
 
-// Size Options
-for (let i = 0; i < sizeOptions.length; i++) {
-    let option = document.createElement('option');
-    option.text = sizeOptions[i].sizeName;
-    option.value = sizeOptions[i].sizePrice;
-    sizeElement.add(option);
+    // Size Options
+    for (let size in packSizeOptions) {
+        let option = document.createElement('option');
+        option.text = size;
+        option.value = packSizeOptions[size];
+        sizeElement.add(option);
+    }
 }
 
 function glazingChange(element){
@@ -75,6 +53,6 @@ function sizeChange(element){
 }
 
 function updateTotalPrice(glazeValue, sizeValue) {
-    totalPrice = (baseBunPrice + glazeValue) * sizeValue;
-    document.querySelector('#total-price').innerText = "$" + totalPrice.toFixed(2);
+    ItemPrice = (baseBunPrice + glazeValue) * sizeValue;
+    document.querySelector('#total-price').innerText = "$" + ItemPrice.toFixed(2);
 }

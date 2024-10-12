@@ -4,6 +4,16 @@ NAME a -> this selector applies to any <a> element that is inside of an element 
 
 */
 
+.total-price{
+    font-weight:bold;
+}
+.item-container-cart{
+    margin: 2px;
+}
+
+.entire-container-cart{
+    margin: 2px;
+}
 .container-home-page-main-elements {
     display: flex;
     justify-content:space-evenly;
