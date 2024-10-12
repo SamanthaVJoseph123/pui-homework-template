@@ -37,6 +37,11 @@
       </div>
     </p>
 
+    <!-- Example: The user starts on index.html and clicks on the “Original Cinnamon Roll” image. Through the <a> tag, it
+       takes the user to otherpage2.html, adding ?roll=Original to the URL. On the otherpage2.html page, the javascript on 
+       this page uses window.location.search to get the query string ?roll=Original. URLSearchParams then retrieves 
+       “original” as the value for roll. Then, knowing this value, the JavaScript can input the proper information like 
+       the Original cinnamon roll’s name, image, and price.  -->
     <div class="container-home-page-main-elements">
       <div class="highlight bold">
         <a class="no-underline" href="./otherpage2.html?roll=Original">

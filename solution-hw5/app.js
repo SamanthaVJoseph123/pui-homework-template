@@ -1,15 +1,15 @@
+// selects the dropdown elements for glazing and size
+// holds a reference to the <select> elements
 let glazingElement = document.querySelector('#glaze-select');
 let sizeElement = document.querySelector('#pack-select');
 
+// setting default values
 let baseBunPrice = 2.49;
-// let glazingPrice = 0;
-// let packSizePrice = 0;
-
-// let constValue = 0;
 let totalPrice = 0;
 let glazeValue = 0;
 let sizeValue = 1;
 
+//objects defining prices of glazes and sizes
 let glazingOptions = {
     "Keep Original": 0,
     "Sugar Milk": 0,
@@ -24,34 +24,39 @@ let packSizeOptions = {
     "12": 10
 };
 
-// Glaze Options
-if (glazingElement && sizeElement){
-    for (let glaze in glazingOptions) {
-        let option = document.createElement('option');
-        option.text = glaze;
-        option.value = glazingOptions[glaze];
-        glazingElement.add(option);
-    }
-
-    // Size Options
-    for (let size in packSizeOptions) {
-        let option = document.createElement('option');
-        option.text = size;
-        option.value = packSizeOptions[size];
-        sizeElement.add(option);
-    }
+//populating dropdowns
+for (let glaze in glazingOptions) {
+    let option = document.createElement('option');
+    //creating a new option element on ever iteration
+    option.text = glaze;
+    option.value = glazingOptions[glaze];
+    //setting the text and value of each option
+    glazingElement.add(option);
+    //adding option to glazingElement
 }
 
+//similar process as for loop above
+for (let size in packSizeOptions) {
+    let option = document.createElement('option');
+    option.text = size;
+    option.value = packSizeOptions[size];
+    sizeElement.add(option);
+}
+
+//parseFloat converts given string to number
+//calls updateTotalPrice
 function glazingChange(element){
     glazeValue = parseFloat(element.value);
     updateTotalPrice(glazeValue, sizeValue);
 }
 
+//similar process as glazingChange
 function sizeChange(element){
     sizeValue = parseFloat(element.value);
     updateTotalPrice(glazeValue, sizeValue);
 }
 
+//function calculates new ItemPrice and inputs into page
 function updateTotalPrice(glazeValue, sizeValue) {
     ItemPrice = (baseBunPrice + glazeValue) * sizeValue;
     document.querySelector('#total-price').innerText = "$" + ItemPrice.toFixed(2);

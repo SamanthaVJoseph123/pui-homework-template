@@ -1,3 +1,5 @@
+// the object roll contains main information including
+//  basePrice and ImageFile for each roll
 const rolls = {
     "Original": {
         "basePrice": 2.49,
