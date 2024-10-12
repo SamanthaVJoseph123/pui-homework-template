@@ -1,8 +1,48 @@
+function generateFullCart(cart){
+    let cartContainer = document.querySelector('.entire-container-cart');
+   cartContainer.innerHTML = '';
+
+   for (const roll of cart){
+       displayOneItem(roll, cartContainer);
+   }
+   
+   updateTotalPrice();
+}
+
+function displayOneItem(roll, cartContainer){
+   let newItem = document.createElement('div');
+
+   newItem.innerHTML = `
+   <div class = "item-container-cart">
+       <div class = "container-cart-page">
+
+         <img class = "cart-page-box" src="../assets/products/${roll.type.toLowerCase()}-cinnamon-roll.jpg" alt="${roll.type} Cinnamon Roll" >
+         <div class = "inner-container-cart-page">
+           <h5 class="inner-container-cart-page-text">${roll.type} Cinnamon Roll</h5>
+           <h5 class="inner-container-cart-page-text">Glazing: ${roll.glazing}</h5>
+           <h5 class="inner-container-cart-page-text">Pack Size: ${roll.size}</h5>
+         </div>
+         <h2 class="cart-page-price-one">$5</h2>
+
+       </div>
+
+       <div class="container-underline-cart-page">
+         <h2 class="underline-cart-page">Remove</h2>
+       </div>
+
+     </div>
+   `;
+
+   cartContainer.appendChild(newItem);
+}
+
+generateFullCart(cart)
+
 // New code below: 
 
 
 
-// function displayOneItem(roll, container1){
+// function displayOneItem(roll){
 //     let newItem = document.createElement('div');
 
 //     newItem.innerHTML = `
@@ -30,7 +70,7 @@
 // }
 
 // function generateFullCart(cart){
-//     let container1 = document.querySelector('.entire-container-cart');
+//      let container1 = document.querySelector('.entire-container-cart');
 //     container1.innerHTML = '';
 
 //     for (const roll of cart){

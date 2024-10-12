@@ -8,17 +8,21 @@ const rollType = params.get('roll')
 //references the rolls object in rollsData.js
 const selectedRoll = rolls[rollType];
 
-const rollName = rollType + " " + "Cinnamon Roll";
-const rollPrice = selectedRoll.basePrice;
-const rollImage = "../assets/products/" + selectedRoll.imageFile;
+console.log(rollType)
 
-const rollHeaderElement = document.querySelector('.center-text-header');
-rollHeaderElement.innerText = rollName;
-const rollImageElement = document.querySelector('.item-page-box');
-rollImageElement.src = rollImage;
-const rollPriceElement = document.querySelector('#total-price');
-rollPriceElement.innerText = "$" + rollPrice;
-baseBunPrice = rollPrice;
+if (rollType != null && rollType !== ""){
+    const rollName = rollType + " " + "Cinnamon Roll";
+    const rollPrice = selectedRoll.basePrice;
+    const rollImage = "../assets/products/" + selectedRoll.imageFile;
+
+    const rollHeaderElement = document.querySelector('.center-text-header');
+    rollHeaderElement.innerText = rollName;
+    const rollImageElement = document.querySelector('.item-page-box');
+    rollImageElement.src = rollImage;
+    const rollPriceElement = document.querySelector('#total-price');
+    rollPriceElement.innerText = "$" + rollPrice;
+    baseBunPrice = rollPrice;
+}
 
 // Lines 23 - 43 are related to creating instances of a roll and adding that to the cart. 
 
@@ -29,16 +33,18 @@ class Roll{
         this.glazing = rollGlazing;
         this.size = packSize;
         this.base = basePrice;
-        this.calculateItemPrice();
+        this.itemPrice = this.calculateItemPrice();
+
     }
 
     calculateItemPrice(){
         let glazingPrice = glazingOptions[this.glazing];
         let sizePrice = packSizeOptions[this.size];
-        this.ItemPrice = (glazingPrice + this.base) * sizePrice;
-        return this.ItemPrice;
+        let answer = (this.base + glazingPrice) * sizePrice;
+        return answer.toFixed(2);
     }
 }
+
 
 //updated cart to contain starting items
 let cart = [
@@ -66,3 +72,44 @@ function addRolltoCart(){
 // RESOURCES I USED: 
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex - to learn about the selectedIndex property
 // https://playcode.io/javascript/classes - to learn about creating new instance
+
+// Lines 62 - 101 are related to displaying cart items in the cart 
+function generateFullCart(cart){
+    let cartContainer = document.querySelector('.entire-container-cart');
+   cartContainer.innerHTML = '';
+
+   for (const roll of cart){
+       displayOneItem(roll, cartContainer);
+   }
+   
+   //wrong function call here (correct later, write a new function)
+   //updateTotalPrice();
+}
+
+function displayOneItem(roll, cartContainer){
+   let newItem = document.createElement('div');
+   newItem.innerHTML = `
+   <div class = "item-container-cart">
+       <div class = "container-cart-page">
+
+         <img class = "cart-page-box" src="../assets/products/${roll.type.toLowerCase()}-cinnamon-roll.jpg" alt="${roll.type} Cinnamon Roll" >
+         <div class = "inner-container-cart-page">
+           <h5 class="inner-container-cart-page-text">${roll.type} Cinnamon Roll</h5>
+           <h5 class="inner-container-cart-page-text">Glazing: ${roll.glazing}</h5>
+           <h5 class="inner-container-cart-page-text">Pack Size: ${roll.size}</h5>
+         </div>
+         <h2 class="cart-page-price-one">$${roll.itemPrice}</h2>
+
+       </div>
+
+       <div class="container-underline-cart-page">
+         <h2 class="underline-cart-page">Remove</h2>
+       </div>
+
+     </div>
+   `;
+
+   cartContainer.appendChild(newItem);
+}
+
+generateFullCart(cart)
