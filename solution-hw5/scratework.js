@@ -1,28 +1,6 @@
 // New code below: 
 
-// class Roll{
-//     constructor(rollType, rollGlazing, packSize, basePrice) {
-//         this.type = rollType;
-//         this.glazing = rollGlazing;
-//         this.size = packSize;
-//         this.base = basePrice;
-//         this.calculateItemPrice();
-//     }
 
-//     calculateItemPrice(){
-//         let glazingPrice = glazingOptions[this.glazing];
-//         let sizePrice = packSizeOptions[this.size];
-//         this.ItemPrice = (glazingPrice + this.base) * sizePrice;
-//         return this.ItemPrice;
-//     }
-// }
-
-// let cart = [
-//     new Roll ("Original", "Sugar Milk", "1", 2.49),
-//     new Roll ("Walnut", "Vanilla Milk", "12", 3.49),
-//     new Roll ("Raisin", "Sugar Milk", "3", 2.99),
-//     new Roll ("Apple", "Original", "3", 3.49),
-// ];
 
 // function displayOneItem(roll, container1){
 //     let newItem = document.createElement('div');

@@ -22,16 +22,31 @@ baseBunPrice = rollPrice;
 
 // Lines 23 - 43 are related to creating instances of a roll and adding that to the cart. 
 
-let cart = [];
-
+//updated object Roll to have calculateItemPrice()
 class Roll{
     constructor(rollType, rollGlazing, packSize, basePrice) {
         this.type = rollType;
         this.glazing = rollGlazing;
         this.size = packSize;
-        this.basePrice = basePrice;
+        this.base = basePrice;
+        this.calculateItemPrice();
+    }
+
+    calculateItemPrice(){
+        let glazingPrice = glazingOptions[this.glazing];
+        let sizePrice = packSizeOptions[this.size];
+        this.ItemPrice = (glazingPrice + this.base) * sizePrice;
+        return this.ItemPrice;
     }
 }
+
+//updated cart to contain starting items
+let cart = [
+    new Roll ("Original", "Sugar Milk", "1", 2.49),
+    new Roll ("Walnut", "Vanilla Milk", "12", 3.49),
+    new Roll ("Raisin", "Sugar Milk", "3", 2.99),
+    new Roll ("Apple", "Original", "3", 3.49),
+];
 
 function addRolltoCart(){
     let glazeType = glazingElement.options[glazingElement.selectedIndex].text;
