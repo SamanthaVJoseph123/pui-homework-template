@@ -4,6 +4,10 @@ NAME a -> this selector applies to any <a> element that is inside of an element 
 
 */
 
+.item-delete{
+    font-weight: 50;
+}
+
 .container-home-page-main-elements {
     display: flex;
     justify-content:space-evenly;

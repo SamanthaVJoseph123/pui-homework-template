@@ -4,6 +4,9 @@
 
   <head>
     <link rel="stylesheet" href="./style.css" type="text/css"/>
+    <script defer src="rollsData.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="details.js"></script>
   </head>
 
   <title>
@@ -30,55 +33,43 @@
          </div>
  
          <hr> 
-
          <h2 class="center-text-header">Our hand-made cinnamon rolls</h2>
-
        </div>
      </div>
    </p>
     
     <div class = "container-cart-page">
-
-      <img class = "cart-page-box" src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" >
-
-      <div class = "inner-container-cart-page">
-        <h5 class="inner-container-cart-page-text">Original Cinnamon Roll</h5>
-        <h5 class="inner-container-cart-page-text">Glazing: Keep original</h5>
-        <h5 class="inner-container-cart-page-text">Pack Size: 1 </h5>
-      </div>
-
-      <h2 class="cart-page-price-one">$2.49</h2>
-
+      <!-- Cart Items will be dynamically added here -->
     </div>
 
-    <div class="container-underline-cart-page">
-      <h2 class="underline-cart-page">Remove</h2>
+    <div id="cart-item-list">
+      <template id="cart-item-template"> 
+        <div id = "item-list">
+          <div class = "container-cart-page">
+            <img class = "cart-page-box" src="" alt="">
+            <div class = "inner-container-cart-page">
+              <h5 class = "inner-container-cart-page-text item-name">Original Cinnamon Roll</h5>
+              <h5 class = "inner-container-cart-page-text glazing">Glazing: Keep original</h5>
+              <h5 class = "inner-container-cart-page-text pack-size">Pack Size: 1</h5>
+            </div>
+            <h2 class = "cart-page-price-one price">$2.49</h2>
+          </div>
+          <div class = "container-underline-cart-page">
+            <h2 class = "underline-cart-page item-delete">Remove</h2>
+          </div>
+        </div>
+      </template>
     </div>
 
-    <div class = "container-cart-page">
-      <img class = "cart-page-box" src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="Original Cinnamon Roll" >
-      <div class = "inner-container-cart-page">
-        <h5 class="inner-container-cart-page-text">Double Chocolate Cinnamon Roll</h5>
-        <h5 class="inner-container-cart-page-text">Glazing: Sugar Milk</h5>
-        <h5 class="inner-container-cart-page-text">Pack Size: 6 </h5>
-      </div>
+    <hr class = "cart-page-bottom-line">
 
-      <h2 class="cart-page-price-two">$27.45</h2>
-
-    </div>
-    <div class="container-underline-cart-page">
-      <h2 class="underline-cart-page">Remove</h2>
+    <div class = "total-container">
+      <h1>Total</h1>
+      <h1 class = "total-cart-price">$0.00</h1>
     </div>
 
-    <hr class="cart-page-bottom-line"> 
-
-    <div class="total-container">
-      <h1>Total </h1>
-      <h1>$29.94</h1>
-    </div>
-
-    <div class="container-checkout">
-      <h2 class="cart-highlighted-box make-bold">Checkout</h2>
+    <div class = "container-checkout">
+      <h2 class = "cart-highlighted-box make-bold">Checkout</h2>
     </div>
 
   </body>
