@@ -1,4 +1,3 @@
-//PREVIOUS CODE BEFORE CHANGES
 // Lines 1 - 21 are related to altering otherpage2.html (specific item page) with roll specific information
 //depending on which link we click on index.html, this sets 
 // the type of roll (Apple, Raisin, etc.) to rollType. 
@@ -10,7 +9,6 @@ let totalCartPrice = 0;
 //references the rolls object in rollsData.js
 const selectedRoll = rolls[rollType];
 
-console.log(rollType)
 
 if (rollType != null && rollType !== ""){
     const rollName = rollType + " " + "Cinnamon Roll";
@@ -51,13 +49,10 @@ class Roll{
 //updated cart to contain starting items
 const cartSet = new Set();
 
-function addRolltoCart(){
-    let glazeType = glazingElement.options[glazingElement.selectedIndex].text;
-    let sizeType = sizeElement.options[sizeElement.selectedIndex].text;
-
-    addedRoll = new Roll(rollType,glazeType,sizeType,baseBunPrice);
-    cart.push(addedRoll);
-    console.log(cart);
+function addRolltoCart(type, glazing, size, basePrice){
+    const roll = new Roll(type, glazing, size, basePrice);
+    cartSet.add(roll);
+    createRollElement(roll);
 }
 
 // Notes:
@@ -70,82 +65,59 @@ function addRolltoCart(){
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex - to learn about the selectedIndex property
 // https://playcode.io/javascript/classes - to learn about creating new instance
 
-// Lines 62 - 101 are related to displaying cart items in the cart 
-function generateFullCart(cart){
-    let cartContainer = document.querySelector('.entire-container-cart');
-   cartContainer.innerHTML = '';
+function createRollElement(roll){
+    const cartContainer = document.querySelector('.entire-container-cart');
 
-    totalCartPrice = 0;
-   for (let itemNumber = 0; itemNumber < cart.length; itemNumber++){
-        let roll = cart[itemNumber];
-        displayOneItem(roll, cartContainer, itemNumber);
-        let oneItemPrice = calculateOneItemPrice(roll);
-        totalCartPrice += oneItemPrice;
-        console.log("HELLO");
-        console.log(`Item ${roll.type} price:`, oneItemPrice);
-   }
+    const template = document.querySelector('#cart-item-template');
+    const clone = template.content.cloneNode(true);
+    roll.element = clone.querySelector('.item-container-cart');
 
-   console.log("Total cart price after update:", totalCartPrice);
-   displayFinalCartPrice();
-}
+    const rollImage = roll.element.querySelector('.cart-page-box');
+    rollImage.src = `../assets/products/${roll.type.toLowerCase()}-cinnamon-roll.jpg`;
+    rollImage.alt = `${roll.type} Cinnamon Roll`;
 
-function displayOneItem(roll, cartContainer, itemNumber){
-    console.log("Displaying item ${roll.type} with itemNumber:", itemNumber);
+    roll.element.querySelector('.inner-container-cart-page-text').innerText = `${roll.type} Cinnamon Roll`;
+    roll.element.querySelector('.glazing').innerText = `Glazing: ${roll.glazing}`;
+    roll.element.querySelector('.pack-size').innerText = `Pack Size: ${roll.size}`;
+    roll.element.querySelector('.cart-page-price-one').innerText = `$${roll.itemPrice}`;
 
-   let newItem = document.createElement('div');
-   newItem.setAttribute("item-number", itemNumber);
-   newItem.innerHTML = `
-   <div class = "item-container-cart">
-       <div class = "container-cart-page">
-
-         <img class = "cart-page-box" src="../assets/products/${roll.type.toLowerCase()}-cinnamon-roll.jpg" alt="${roll.type} Cinnamon Roll" >
-         <div class = "inner-container-cart-page">
-           <h5 class="inner-container-cart-page-text">${roll.type} Cinnamon Roll</h5>
-           <h5 class="inner-container-cart-page-text">Glazing: ${roll.glazing}</h5>
-           <h5 class="inner-container-cart-page-text">Pack Size: ${roll.size}</h5>
-         </div>
-         <h2 class="cart-page-price-one">$${roll.itemPrice}</h2>
-
-       </div>
-
-       <div class="container-underline-cart-page">
-         <h2 class="underline-cart-page" onclick="removeRollFromCart(${itemNumber})">Remove</h2>
-       </div>
-
-     </div>
-   `;
-
-   cartContainer.appendChild(newItem);
-}
-
-function calculateOneItemPrice(roll){
-    return parseFloat(roll.itemPrice);
-}
-
-
-function displayFinalCartPrice(){
-    let finalCartPrice = document.querySelector('.total-cart-price');
-    if (finalCartPrice != null){
-        finalCartPrice.innerText = "$" + totalCartPrice.toFixed(2);
-    }
-}
-
-function removeRollFromCart(itemNumber){
-    console.log("removing item at index:", itemNumber)
-    cart.splice(itemNumber, 1);
-    generateFullCart(cart);
+    const removeButton = roll.element.querySelector('.underline-cart-page');
+    removeButton.addEventListener('click', () => deleteRollFromCart(roll));
+    
+    cartContainer.appendChild(roll.element);
     updateTotalCartPrice();
 }
 
 function updateTotalCartPrice(){
     totalCartPrice = 0;
-    for (let i = 0; i < cart.length; i++){
-        let roll = cart[i];
+    cartSet.forEach(roll => {
         totalCartPrice += parseFloat(roll.itemPrice);
+    })
+
+    const finalCartPrice = document.querySelector('.total-cart-price');
+    if (finalCartPrice) {
+        finalCartPrice.innerText = "$" + totalCartPrice.toFixed(2);
     }
-    console.log("Updated total cart price:", totalCartPrice);
-    displayFinalCartPrice();
 }
 
-generateFullCart(cart)
-displayFinalCartPrice()
+function deleteRollFromCart(roll){
+    roll.element.remove();
+    cartSet.delete(roll);
+    updateTotalCartPrice();
+}
+
+function initializeCart(){
+    const initialCartItems = [
+        new Roll("Original", "Sugar Milk", "1", 2.49),
+        new Roll("Walnut", "Vanilla Milk", "12", 3.49),
+        new Roll("Raisin", "Sugar Milk", "3", 2.99),
+        new Roll("Apple", "Original", "3", 3.49),
+    ];
+
+    initialCartItems.forEach(roll => {
+        cartSet.add(roll);
+        createRollElement(roll);
+    });
+}
+
+initializeCart();

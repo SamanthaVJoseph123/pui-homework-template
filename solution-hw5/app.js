@@ -1,65 +1,80 @@
-// selects the dropdown elements for glazing and size
-// holds a reference to the <select> elements
 let glazingElement = document.querySelector('#glaze-select');
 let sizeElement = document.querySelector('#pack-select');
 
-// setting default values
 let baseBunPrice = 2.49;
+// let glazingPrice = 0;
+// let packSizePrice = 0;
+
+// let constValue = 0;
 let totalPrice = 0;
 let glazeValue = 0;
 let sizeValue = 1;
 
-//objects defining prices of glazes and sizes
-let glazingOptions = {
-    "Original": 0,
-    "Sugar Milk": 0,
-    "Vanilla Milk": 0.5,
-    "Double Chocolate": 1.5
-};
+let glazingOptions = [
+    {
+        glazeName: 'Keep Original',
+        glazePrice: 0,
+    },
+    {
+        glazeName: "Sugar Milk",
+        glazePrice: 0,
+    },
+    {
+        glazeName: "Vanilla Milk",
+        glazePrice: 0.5,
+    },
+    {
+        glazeName: "Double Chocolate",
+        glazePrice: 1.50,
+    },
+  ];
 
-let packSizeOptions = {
-    "1": 1,
-    "3": 3,
-    "6": 5,
-    "12": 10
-};
+  let sizeOptions = [
+    {
+        sizeName: '1',
+        sizePrice: 1,
+    },
+    {
+        sizeName: "3",
+        sizePrice: 3,
+    },
+    {
+        sizeName: "6",
+        sizePrice: 5,
+    },
+    {
+        sizeName: "12",
+        sizePrice: 10,
+    },
+  ];
 
-//populating dropdowns
-if ((glazingElement != null) && (sizeElement != null)){
-    for (let glaze in glazingOptions) {
-        let option = document.createElement('option');
-        //creating a new option element on ever iteration
-        option.text = glaze;
-        option.value = glazingOptions[glaze];
-        //setting the text and value of each option
-        glazingElement.add(option);
-        //adding option to glazingElement
-    }
-
-    //similar process as for loop above
-    for (let size in packSizeOptions) {
-        let option = document.createElement('option');
-        option.text = size;
-        option.value = packSizeOptions[size];
-        sizeElement.add(option);
-    }
+// Glaze Options
+for (let i = 0; i < glazingOptions.length; i++) {
+    let option = document.createElement('option');
+    option.text = glazingOptions[i].glazeName;
+    option.value = glazingOptions[i].glazePrice;
+    glazingElement.add(option);
 }
 
-//parseFloat converts given string to number
-//calls SpecificUpdateItemPrice (was updateTotalPrice)
+// Size Options
+for (let i = 0; i < sizeOptions.length; i++) {
+    let option = document.createElement('option');
+    option.text = sizeOptions[i].sizeName;
+    option.value = sizeOptions[i].sizePrice;
+    sizeElement.add(option);
+}
+
 function glazingChange(element){
     glazeValue = parseFloat(element.value);
-    SpecificUpdateItemPrice(glazeValue, sizeValue, baseBunPrice);
+    updateTotalPrice(glazeValue, sizeValue);
 }
 
-//similar process as glazingChange
 function sizeChange(element){
     sizeValue = parseFloat(element.value);
-    SpecificUpdateItemPrice(glazeValue, sizeValue, baseBunPrice);
+    updateTotalPrice(glazeValue, sizeValue);
 }
 
-//function calculates new ItemPrice and inputs into page
-function SpecificUpdateItemPrice(glazeValue, sizeValue, baseBunPrice) {
-    ItemPrice = (baseBunPrice + glazeValue) * sizeValue;
-    document.querySelector('#total-price').innerText = "$" + ItemPrice.toFixed(2);
+function updateTotalPrice(glazeValue, sizeValue) {
+    totalPrice = (baseBunPrice + glazeValue) * sizeValue;
+    document.querySelector('#total-price').innerText = "$" + totalPrice.toFixed(2);
 }

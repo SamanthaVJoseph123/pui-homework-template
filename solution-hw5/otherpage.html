@@ -4,9 +4,6 @@
 
   <head>
     <link rel="stylesheet" href="./style.css" type="text/css"/>
-    <script defer src="rollsData.js"></script>
-    <script defer src="app.js"></script>
-    <script defer src="details.js"></script>
   </head>
 
   <title>
@@ -39,33 +36,45 @@
        </div>
      </div>
    </p>
+    
+    <div class = "container-cart-page">
 
-   <div class="entire-container-cart">
-    <!-- going to be dynamically filled through JS -->
+      <img class = "cart-page-box" src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" >
+
+      <div class = "inner-container-cart-page">
+        <h5 class="inner-container-cart-page-text">Original Cinnamon Roll</h5>
+        <h5 class="inner-container-cart-page-text">Glazing: Keep original</h5>
+        <h5 class="inner-container-cart-page-text">Pack Size: 1 </h5>
+      </div>
+
+      <h2 class="cart-page-price-one">$2.49</h2>
+
     </div>
 
-    <template id = "cart-item-template">
-      <div class = "item-container-cart">
-        <div class = "container-cart-page">
-          <img class = "cart-page-box" src="" alt="">
-          <div class = "inner-container-cart-page">
-            <h5 class = "inner-containter-cart-page-text"></h5>
-            <h5 class = "inner-container-cart-page-text glazing"></h5>
-            <h5 class = "inner-container-cart-page-text pack-size"></h5>
-          </div>
-          <h2 class = "cart-page-price-one">$0.00</h2>
-        </div>
-        <div class="container-underline-cart-page">
-          <h2 class = "unerline-cart-page">Remove</h2>
-        </div>
+    <div class="container-underline-cart-page">
+      <h2 class="underline-cart-page">Remove</h2>
+    </div>
+
+    <div class = "container-cart-page">
+      <img class = "cart-page-box" src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="Original Cinnamon Roll" >
+      <div class = "inner-container-cart-page">
+        <h5 class="inner-container-cart-page-text">Double Chocolate Cinnamon Roll</h5>
+        <h5 class="inner-container-cart-page-text">Glazing: Sugar Milk</h5>
+        <h5 class="inner-container-cart-page-text">Pack Size: 6 </h5>
       </div>
-    </template>
+
+      <h2 class="cart-page-price-two">$27.45</h2>
+
+    </div>
+    <div class="container-underline-cart-page">
+      <h2 class="underline-cart-page">Remove</h2>
+    </div>
 
     <hr class="cart-page-bottom-line"> 
 
     <div class="total-container">
       <h1>Total </h1>
-      <h1 class = "total-cart-price">$0.00</h1>
+      <h1>$29.94</h1>
     </div>
 
     <div class="container-checkout">
@@ -74,7 +83,6 @@
 
   </body>
 </html>
-
 
 
 
