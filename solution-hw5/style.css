@@ -7,6 +7,11 @@ NAME a -> this selector applies to any <a> element that is inside of an element 
 .total-price{
     font-weight:bold;
 }
+
+.total-cart-price{
+    font-weight:bold;
+    font-family:"Arial", sans-serif;
+}
 .item-container-cart{
     margin: 2px;
 }
