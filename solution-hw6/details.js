@@ -38,7 +38,12 @@ class Roll{
 
 const rollSet = new Set();
 
-function addNewRollItem(rollType, rollGlazing, packSize, basePrice) {
+// ItemInfo is an array of strings.
+function addNewRollItem(itemInfo) {
+    let rollType = itemInfo[0];
+    let rollGlazing = itemInfo[1];
+    let packSize = itemInfo[2];
+    let basePrice = itemInfo[3]
     const rollItem = new Roll(rollType, rollGlazing, packSize, basePrice);
     rollSet.add(rollItem);
     return rollItem;
@@ -61,23 +66,20 @@ function createElement(rollItem) {
     updateElement(rollItem);
 }
 
-// function addRolltoCart(){
-//     // let glazeType = glazingElement.text;
-//     // let sizeType = sizeElement.text;
-//     let glazeType = glazingElement.options[glazingElement.selectedIndex].text;
-//     let sizeType = sizeElement.options[sizeElement.selectedIndex].text;
+function addRolltoCart(){
+    // let glazeType = glazingElement.text;
+    // let sizeType = sizeElement.text;
+    let glazeType = glazingElement.options[glazingElement.selectedIndex].text;
+    let sizeType = sizeElement.options[sizeElement.selectedIndex].text;
 
-//     addedRoll = new Roll(rollType,glazeType,sizeType,baseBunPrice);
-//     cart.push(addedRoll);
-//     console.log(cart);
-// }
+    addedRoll = [rollType,glazeType,sizeType,baseBunPrice];
+    console.log(addedRoll)
+    cart.push(addedRoll);
+    console.log("BYEEEE")
+    console.log(cart);
+}
 
 function updateElement(rollItem) {
-    // rollItemName.innerText = rollItem.type;
-    // rollItemGlazing.innerText = rollItem.glazing;
-    // rollItemSize.innerText = rollItem.size;
-    // rollItemPrice.innerText = rollItem.basePrice;
-
     rollItem.element.querySelector('.cart-page-box').src = `../assets/products/${rollItem.type.toLowerCase()}-cinnamon-roll.jpg`;
     rollItem.element.querySelector('.item-name').innerText = `${rollItem.type} Cinnamon Roll`;
     rollItem.element.querySelector('.glazing').innerText = `Glazing: ${rollItem.glazing}`;
@@ -99,39 +101,26 @@ function deleteRollItem(rollItem) {
     updateTotalCartPrice();
 }
 
+let item1 = ["Original", "Sugar Milk", "1", "2.49"];
+let item2 = ["Walnut", "Vanilla Milk", "12", "3.49"];
+let item3 = ["Raisin", "Sugar Milk", "3", "2.99"];
+let item4 = ["Apple", "Original", "3", "3.49"];
 
-addNewRollItem(
-    "Original", 
-    "Sugar Milk", 
-    "1", 
-    "2.49"
-);
+cart.push(item1, item2, item3, item4)
+console.log("HELLO I AM HERE")
+console.log(cart)
 
-addNewRollItem(
-    "Walnut", 
-    "Vanilla Milk", 
-    "12", 
-    "3.49"
-);
+function addItemsIntoCart(cart){
+    for (let item of cart){
+        addNewRollItem(item)
+    }
+}
 
-addNewRollItem(
-    "Raisin", 
-    "Sugar Milk", 
-    "3", 
-    "2.99"
-);
-
-addNewRollItem(
-    "Apple", 
-    "Original", 
-    "3", 
-    "3.49"
-);
-
+addItemsIntoCart(cart)
 
 for (const rollItem of rollSet) {
-    console.log(rollItem);
+    // console.log(rollItem);
     createElement(rollItem);
-  }
+}
 
-  updateTotalCartPrice()
+updateTotalCartPrice()
