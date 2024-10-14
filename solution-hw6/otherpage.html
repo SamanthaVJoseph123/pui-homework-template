@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+
+  <head>
+    <link rel="stylesheet" href="./style.css" type="text/css"/>
+    <script defer src="rollsData.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="details.js"></script>
+  </head>
+
+  <title>
+    Cart Page
+  </title>
+
+  <body>
+    <p>
+      <div class="nav-container">
+
+       <a href="./index.html">
+         <img src="../assets/logo/logo-01.svg" width = "500" alt="Logo" >
+       </a>
+
+       <div class="outer-nav-container">
+         <div class="inner-nav-container">
+           <div>
+             <a class="nav-link-format no-underline" href="./index.html">PRODUCTS</a>
+           </div>
+   
+           <div>
+             <a class="highlight-text nav-link-format no-underline  make-bold" href="./otherpage.html">CART</a>
+           </div>
+         </div>
+ 
+         <hr> 
+         <h2 class="center-text-header">Our hand-made cinnamon rolls</h2>
+       </div>
+     </div>
+   </p>
+    
+    <div class = "container-cart-page">
+      <!-- Cart Items will be dynamically added here -->
+    </div>
+
+    <div id="cart-item-list">
+      <template id="cart-item-template"> 
+        <div id = "item-list">
+          <div class = "container-cart-page">
+            <img class = "cart-page-box" src="" alt="">
+            <div class = "inner-container-cart-page">
+              <h5 class = "inner-container-cart-page-text item-name">Original Cinnamon Roll</h5>
+              <h5 class = "inner-container-cart-page-text glazing">Glazing: Keep original</h5>
+              <h5 class = "inner-container-cart-page-text pack-size">Pack Size: 1</h5>
+            </div>
+            <h2 class = "cart-page-price-one price">$2.49</h2>
+          </div>
+          <div class = "container-underline-cart-page">
+            <h2 class = "underline-cart-page item-delete">Remove</h2>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <hr class = "cart-page-bottom-line">
+
+    <div class = "total-container">
+      <h1>Total</h1>
+      <h1 class = "total-cart-price">$0.00</h1>
+    </div>
+
+    <div class = "container-checkout">
+      <h2 class = "cart-highlighted-box make-bold">Checkout</h2>
+    </div>
+
+  </body>
+</html>
+
+
+
 
