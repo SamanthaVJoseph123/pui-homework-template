@@ -1,14 +1,14 @@
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
-const rollType = params.get('roll')
+const rollType = params.get('roll');
 const selectedRoll = rolls[rollType];
-console.log(rollType)
+console.log(rollType);
 let cart = [];
 
 if (rollType != null){
     let baseBunPrice = selectedRoll.basePrice;
 
-    const rollName = `${rollType} Cinnamon Roll`
+    const rollName = `${rollType} Cinnamon Roll`;
     const rollImage = `../assets/products/${selectedRoll.imageFile}`;
     // const rollPrice = selectedRoll.basePrice;
 
@@ -36,16 +36,11 @@ class Roll{
     }
 }
 
-const rollSet = new Set();
+// const rollSet = new Set();
 
-// ItemInfo is an array of strings.
-function addNewRollItem(itemInfo) {
-    let rollType = itemInfo[0];
-    let rollGlazing = itemInfo[1];
-    let packSize = itemInfo[2];
-    let basePrice = itemInfo[3]
+function addNewRollItem(rollType, rollGlazing, packSize, basePrice) {
     const rollItem = new Roll(rollType, rollGlazing, packSize, basePrice);
-    rollSet.add(rollItem);
+    cart.push(rollItem);
     return rollItem;
 }
 
@@ -56,7 +51,7 @@ function createElement(rollItem) {
     rollItem.element = clone.querySelector('#item-list');
     
     const btnDelete = rollItem.element.querySelector('.item-delete');
-    console.log(btnDelete)
+    console.log(btnDelete);
     btnDelete.addEventListener('click', () => {
         deleteRollItem(rollItem);
     });
@@ -69,17 +64,28 @@ function createElement(rollItem) {
 function addRolltoCart(){
     // let glazeType = glazingElement.text;
     // let sizeType = sizeElement.text;
+    console.log("THIS IS THE CART BEFORE ADDING:");
+    console.log(cart);
+
     let glazeType = glazingElement.options[glazingElement.selectedIndex].text;
     let sizeType = sizeElement.options[sizeElement.selectedIndex].text;
 
-    addedRoll = [rollType,glazeType,sizeType,baseBunPrice];
-    console.log(addedRoll)
+
+    let addedRoll = new Roll(rollType,glazeType,sizeType,baseBunPrice);
     cart.push(addedRoll);
-    console.log("BYEEEE")
+    console.log("THIS IS THE CART AFTER ADDING");
     console.log(cart);
+
+    saveToLocalStorage();
+    // retrieveFromLocalStorage();
 }
 
 function updateElement(rollItem) {
+    // rollItemName.innerText = rollItem.type;
+    // rollItemGlazing.innerText = rollItem.glazing;
+    // rollItemSize.innerText = rollItem.size;
+    // rollItemPrice.innerText = rollItem.basePrice;
+
     rollItem.element.querySelector('.cart-page-box').src = `../assets/products/${rollItem.type.toLowerCase()}-cinnamon-roll.jpg`;
     rollItem.element.querySelector('.item-name').innerText = `${rollItem.type} Cinnamon Roll`;
     rollItem.element.querySelector('.glazing').innerText = `Glazing: ${rollItem.glazing}`;
@@ -89,38 +95,114 @@ function updateElement(rollItem) {
 
 function updateTotalCartPrice() {
     let totalCartPrice = 0;
-    for (const roll of rollSet){
+    for (const roll of cart){
         totalCartPrice += parseFloat(roll.itemPrice);
     }
-    document.querySelector('.total-cart-price').innerText = `$${totalCartPrice.toFixed(2)}`;
+
+    let priceArea = document.querySelector('.total-cart-price');
+
+    if (priceArea == null){
+        return;
+    }
+    priceArea.innerText = `$${totalCartPrice.toFixed(2)}`;
 }
 
 function deleteRollItem(rollItem) {
+    const index = cart.indexOf(rollItem);
     rollItem.element.remove();
-    rollSet.delete(rollItem);
-    updateTotalCartPrice();
+
+    if (index > -1){
+        cart.splice(index,1);
+    }
+    saveToLocalStorage();
+    // retrieveFromLocalStorage();
+    // updateTotalCartPrice();
 }
 
-let item1 = ["Original", "Sugar Milk", "1", "2.49"];
-let item2 = ["Walnut", "Vanilla Milk", "12", "3.49"];
-let item3 = ["Raisin", "Sugar Milk", "3", "2.99"];
-let item4 = ["Apple", "Original", "3", "3.49"];
 
-cart.push(item1, item2, item3, item4)
-console.log("HELLO I AM HERE")
-console.log(cart)
+// addNewRollItem(
+//     "Original", 
+//     "Sugar Milk", 
+//     "1", 
+//     "2.49"
+// );
 
-function addItemsIntoCart(cart){
-    for (let item of cart){
-        addNewRollItem(item)
+// addNewRollItem(
+//     "Walnut", 
+//     "Vanilla Milk", 
+//     "12", 
+//     "3.49"
+// );
+
+// addNewRollItem(
+//     "Raisin", 
+//     "Sugar Milk", 
+//     "3", 
+//     "2.99"
+// );
+
+// addNewRollItem(
+//     "Apple", 
+//     "Original", 
+//     "3", 
+//     "3.49"
+// );
+
+// function updateLocalStorage(cart){
+//     let cartJSON = JSON.stringify(cart);
+//     localStorage.setItem("cart",cartJSON);
+// }
+
+function saveToLocalStorage(){
+    //cart is already an array
+    const itemArrayString = JSON.stringify(cart);
+    console.log("This is the Local Storage:");
+    console.log(itemArrayString);
+    localStorage.setItem("storedItems", itemArrayString);
+}
+
+// function retrieveFromLocalStorage(){
+//     const itemArrayString = localStorage.getItem('storedItems');
+//     const itemArray = JSON.parse(itemArrayString);
+//     for (const itemData of itemArray) {
+//         const item = addNewRollItem(itemData.type, itemData.glazing, itemData.size, itemData.basePrice);
+//         createElement(item);
+//     }
+// }
+
+function retrieveFromLocalStorage(){ 
+    const itemArrayString = localStorage.getItem('storedItems');
+
+    if (itemArrayString){
+        const itemArray = JSON.parse(itemArrayString);
+        cart = [];
+        for (const itemData of itemArray) {
+            const item = addNewRollItem(itemData.type, itemData.glazing, itemData.size, itemData.basePrice);
+            createElement(item);
+        }
     }
 }
 
-addItemsIntoCart(cart)
+// if (localStorage.getItem('storedItems') != null && document.querySelector('#cart-item-template') != null) {
+//     console.log("I AM ON THE CART PAGE:");
+//     console.log(cart);
+//     retrieveFromLocalStorage();
+// }
 
-for (const rollItem of rollSet) {
-    // console.log(rollItem);
-    createElement(rollItem);
-}
+// if (localStorage.getItem('storedItems') != null) {
+//     console.log("This is what localstorage.getitems is:")
+//     console.log(localStorage.getItem('storedItems'))
+//     console.log("I AM ON THE CART PAGE:");
+//     console.log(cart);
+//     retrieveFromLocalStorage();
+// }
+
+
+retrieveFromLocalStorage();
+
+// for (const rollItem of cart) {
+//     console.log(rollItem);
+//     createElement(rollItem);
+// }
 
 updateTotalCartPrice()
