@@ -2,7 +2,6 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll');
 const selectedRoll = rolls[rollType];
-console.log(rollType);
 
 if (rollType != null){
     let baseBunPrice = selectedRoll.basePrice;
@@ -35,7 +34,6 @@ class Roll{
 
 let priceArea = document.querySelector('.total-cart-price'); 
 if (priceArea != null){
-    console.log("I am on the cart page! This is cart:");
     retrieveFromLocalStorage();
     updateTotalCartPrice();
 }
@@ -52,7 +50,6 @@ function createElement(rollItem) {
     rollItem.element = clone.querySelector('#item-list');
     
     const btnDelete = rollItem.element.querySelector('.item-delete');
-    console.log(btnDelete);
     btnDelete.addEventListener('click', () => {
         deleteRollItem(rollItem);
     });
