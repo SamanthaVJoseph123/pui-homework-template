@@ -9,6 +9,8 @@ Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/
 
 ![Website Design 2](image-4.png)
 
+![Website Design 3](image-5.png)
+
 Describe your website (300 words):
 
 The website that I have decided to program is a blog website. I have many hobbies and interests, and I wanted a website that would allow me to express myself through my writing and findings. For example, I have a passion for cooking and baking and have a few American and Indian recipes that I would love to share online. I also love reading books, and want to post my book reviews online as well! Another great example is my deep dives into specific topics of Religion or Politics, including answering questions such as “What historical evidence supports the idea of God?”. All of this information would be included on this website through an individual blog post. 
