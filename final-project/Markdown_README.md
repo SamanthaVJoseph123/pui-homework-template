@@ -7,7 +7,7 @@ Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/
 
 ![Website Design 1](image-3.png)
 
-
+![Website Design 2](image-4.png)
 
 Describe your website (300 words):
 
