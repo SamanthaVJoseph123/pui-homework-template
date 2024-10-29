@@ -5,8 +5,7 @@ Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/
 
 ## Part 1: Website Description
 
-![Website Design 1](image-1.png)
-
+![Website Design 1](image-2.png)
 
 
 
