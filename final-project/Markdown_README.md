@@ -5,38 +5,6 @@ Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/
 
 ## Part 1: Website Description
 
-![Website Design 1](image-3.png)
-
-![Website Design 2](image-4.png)
-
-![Website Design 3](image-5.png)
-
-Describe your website (300 words):
-
-The website that I have decided to program is a blog website. I have many hobbies and interests, and I wanted a website that would allow me to express myself through my writing and findings. For example, I have a passion for cooking and baking and have a few American and Indian recipes that I would love to share online. I also love reading books, and want to post my book reviews online as well! Another great example is my deep dives into specific topics of Religion or Politics, including answering questions such as “What historical evidence supports the idea of God?”. All of this information would be included on this website through individual blog posts. 
-
-
-There will be multiple pages on my website. On the home page, I will have a brief introduction of myself at the top, a breakdown of categories, and then my most recent blog posts. The breakdown of categories will allow users who are interested in a specific topic of my blog to be easily guided to those blog posts. For example, if someone is interested in my recipes, then they can click on the “My Recipe Book” category which will take them to all the blogs that I have posted regarding cooking and baking. Each category will be an icon on the home page and contain a label at the bottom. The target audience is anyone interested in learning about the topics that I have researched or provided information on, such as cooking or politics. 
-
-This website will be interesting and engaging because I plan on using not only text but images and icons as well throughout the website and within the blog post. I also want the user to be able to comment and “heart” the blog post to gain reactions to my work. I believe this will make the website more interactive and attractive for users. 
-
-
-On 0.5 pages (~300 words), summarize all the critiques you received during the lab session:
-
-During the lab session, I got a lot of great feedback on all three of my designs. Regarding my portfolio and blog website, one girl recommended I consider how efficient it would be to add a new project to my portfolio or blog website through code. She stated that this may cause the process to be complicated, as I would have to go into the HTML of the website and manually change the code every time I wanted to update my website. This was great advice that I had not considered before. I also explained my interest in adding animations throughout my website, and she recommended the library P5. 
-
-After one peer had brought up the challenge of manually editing my website every time I wanted to update it, another peer provided a possible solution. She had stated that instead of programming the website to be static, code it to be dynamic. She recommended I create it like the application Facebook or Instagram, where the user (myself) can view the running website, click on a category I want to write a blog in, click an “Add New Post” button, fill out the text box, and then click “Post!” to post the context to the website. This was a really amazing idea that I plan on implementing in my designs. 
-
-One of my website ideas was building the 15-121 website. This past summer, I was a UI/UX designer for CMU (working under Professor Françeska) and redesigned the course website. As the programming of the website was postponed to next summer, I was open to the task as I had learned all the necessary skills in this class. However, I received many critiques for this idea. First, this website did not have much animation or complexity. It included 2 small animations, links linking to external sources, and links linking to PDF documents. When I explained this to my peers, many stated that this was too simple of a project to satisfy the project requirements. Additionally, they stated that the blog website I had explained to them was able to showcase more of my skills, ideas, and personality. 
-
-Add 0.5 pages (~300 words) that digest the feedback you got in the lab. Indicate which critique you will act on in your next design and why you chose to incorporate/dismiss pieces of critique:
-
-As stated previously, I got a lot of great feedback from this lab. I will definitely be incorporating many parts of the critique into my designs. For example, one of my peers explained that my blog post should be a dynamic site, not a state one. This was a great idea that I will be implementing in my design, as it will allow me to easily add or delete any blog posts. However, this opens up a new issue. If I allow the blog site to be dynamically changed by the user (me) viewing the website, then I need to make sure that viewers (who are NOT me) are not able to edit posts on the blog. My peers and I were also brainstorming methods to fix this issue, such as having a password-protected “Submit Post” which will only allow users who have the password (me) to post a blog post. 
-
-One peer stated that, if I were to use animations, she recommended that I use the library P5. She stated that it is a very beginner-friendly library and has used it in her own experience. She stated that it is also an open-source library with many resources on the internet, which would help me as I have never used this library before. 
-
-At the beginning of the work session, I was unsure which website design to go through with. However, towards the end, I decided to go with the Blog website. This is partly due to the critiques I received on my other two website designs. For example, on my 15-121 Course website design, I got feedback that the website was too simple for this assignment and did not showcase my true skills, passions, and personality. Thus, I decided not to go with this design. 
-
 ## Part 2: User Interaction
 
 How a user would interact with your website? For each step, briefly but clearly state the interaction type & how we should reproduce it.
@@ -221,29 +189,49 @@ How would you use Generative AI responsibly?
 
 ## Idea Sketches
 
-### *Idea 1*
+### *Idea 1* - Main idea that I will be implementing
 
-![title for sketch1](images/sketch1.png)
+Describe your website (300 words):
 
-Add a few sentences about your design. Briefly state the motivation of each project idea. Example questions to answer:
+The website that I have decided to program is a blog website. I have many hobbies and interests, and I wanted a website that would allow me to express myself through my writing and findings. For example, I have a passion for cooking and baking and have a few American and Indian recipes that I would love to share online. I also love reading books, and want to post my book reviews online as well! Another great example is my deep dives into specific topics of Religion or Politics, including answering questions such as “What historical evidence supports the idea of God?”. All of this information would be included on this website through individual blog posts. 
+
+There will be multiple pages on my website. On the home page, I will have a brief introduction of myself at the top, a breakdown of categories, and then my most recent blog posts. The breakdown of categories will allow users who are interested in a specific topic of my blog to be easily guided to those blog posts. For example, if someone is interested in my recipes, then they can click on the “My Recipe Book” category which will take them to all the blogs that I have posted regarding cooking and baking. Each category will be an icon on the home page and contain a label at the bottom. The target audience is anyone interested in learning about the topics that I have researched or provided information on, such as cooking or politics. 
+
+This website will be interesting and engaging because I plan on using not only text but images and icons as well throughout the website and within the blog post. I also want the user to be able to comment and “heart” the blog post to gain reactions to my work. I believe this will make the website more interactive and attractive for users. 
+
+![Website Design 1](image-3.png)
+
+### *Idea 2*
 
 * What is the basic idea of your final project? (1-2 sentences)  
 * How do you plan to make your design interactive and engaging?  
 * How do you plan to make your design accessible?  
 * What information do you specifically want to convey and include on your website?
 
-### *Idea 2*
-
-…
+![Website Design 2](image-4.png)
 
 ### *Idea 3*
 
-…
+![Website Design 3](image-5.png)
 
 ## Feedback Summary
 
-Summarize all the critiques you received during the lab session (\~300 words). 
+Summarize all the critiques you received during the lab session (\~300 words).
+
+During the lab session, I got a lot of great feedback on all three of my designs. Regarding my portfolio and blog website, one girl recommended I consider how efficient it would be to add a new project to my portfolio or blog website through code. She stated that this may cause the process to be complicated, as I would have to go into the HTML of the website and manually change the code every time I wanted to update my website. This was great advice that I had not considered before. I also explained my interest in adding animations throughout my website, and she recommended the library P5. 
+
+After one peer had brought up the challenge of manually editing my website every time I wanted to update it, another peer provided a possible solution. She had stated that instead of programming the website to be static, code it to be dynamic. She recommended I create it like the application Facebook or Instagram, where the user (myself) can view the running website, click on a category I want to write a blog in, click an “Add New Post” button, fill out the text box, and then click “Post!” to post the context to the website. This was a really amazing idea that I plan on implementing in my designs. 
+
+One of my website ideas was building the 15-121 website. This past summer, I was a UI/UX designer for CMU (working under Professor Françeska) and redesigned the course website. As the programming of the website was postponed to next summer, I was open to the task as I had learned all the necessary skills in this class. However, I received many critiques for this idea. First, this website did not have much animation or complexity. It included 2 small animations, links linking to external sources, and links linking to PDF documents. When I explained this to my peers, many stated that this was too simple of a project to satisfy the project requirements. Additionally, they stated that the blog website I had explained to them was able to showcase more of my skills, ideas, and personality. 
 
 ## Feedback Digestion
 
 Digest the feedback you got in the lab (\~300 words). Indicate which critique you will act on in your next design and why you chose to incorporate/dismiss pieces of critique.
+
+As stated previously, I got a lot of great feedback from this lab. I will definitely be incorporating many parts of the critique into my designs. For example, one of my peers explained that my blog post should be a dynamic site, not a state one. This was a great idea that I will be implementing in my design, as it will allow me to easily add or delete any blog posts. However, this opens up a new issue. If I allow the blog site to be dynamically changed by the user (me) viewing the website, then I need to make sure that viewers (who are NOT me) are not able to edit posts on the blog. My peers and I were also brainstorming methods to fix this issue, such as having a password-protected “Submit Post” which will only allow users who have the password (me) to post a blog post. 
+
+One peer stated that, if I were to use animations, she recommended that I use the library P5. She stated that it is a very beginner-friendly library and has used it in her own experience. She stated that it is also an open-source library with many resources on the internet, which would help me as I have never used this library before. 
+
+At the beginning of the work session, I was unsure which website design to go through with. However, towards the end, I decided to go with the Blog website. This is partly due to the critiques I received on my other two website designs. For example, on my 15-121 Course website design, I got feedback that the website was too simple for this assignment and did not showcase my true skills, passions, and personality. Thus, I decided not to go with this design. 
+
+
