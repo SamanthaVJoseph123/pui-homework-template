@@ -112,76 +112,94 @@ Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-gener
 
 ## Project Description
 
-Briefly restate your motivation and a short description of your project.
+My project is a blog website. On the website, I will be able to post blogs based on different interests and passions, such as cooking or book reviews. My website will have multiple pages. On the home page, there will be a personal introduction, a section explaining the different topics or categories that I write about, and my recent posts. Once a user clicks a specific category or topic, it will direct them to the second page, which will show all blog posts relating to that topic. There is also an about me page, where the user can learn more about me. There is a post page that will only be accessible to me, which is where I can write my posts. Lastly, there will be individual blog post pages, showcasing the content. 
 
 ## High-Fi Prototypes
-
+Question from Google Doc: Add screenshots of your 2 high-fi prototypes and add a brief summary of the user feedback for each. Use about max. 1 page (<100 words, ~2 images) per prototype.
 ### *Prototype 1*
 
-![title for prototype1](images/prototype1.png)
+I received a lot of great feedback. Users stated that they could easily understand what the website was about and navigate through it. They understood, additionally, the different topics that I would blog about and how they could access those specific posts. One user noted that he liked the “tags” that were on each of the posts, because it  informed him on which posts fall within which category. The users, however, were confused about why there was a “Post” button and believed that they could post on this blog if they clicked that button. However, this was intended for my use. 
 
-A brief description and summary of the user feedback (\<100 words, 2 images) 
+![Homepage1](image-7.png)
+![OverallPrototype1](image-6.png)
 
 ### *Prototype 2*
+I also received a lot of great feedback on this prototype. I changed the layout of the topic categories, stacking them on top of each other. The users stated they preferred them lined up (as on my previous prototype), as the current design appeared more cluttered. I also removed the recent posts from the home page in this prototype. However, users stated that having the recent posts available may interest users as soon as they enter the home page. Lastly, users noted that images could fall on the left and right of blog text, which made it look more interactive. They both preferred this structure to the structure of the previous design. 
 
-…
+![Homepage2](image-8.png)
+![OverallPrototype2](image-9.png)
 
 ## Usability Test
 
 Discuss the user feedback you got during the evaluation / usability test (\~300 words). Indicate which feedback you implemented, inspired new directions, or otherwise influenced your final design. 
 
+The specific user feedback that I had received through my user testing was discussed in my previous answer. I implemented much of the feedback into my final design. First, I made sure to remove the “Post” button located on the Home page. Previously, this confused users, as they believed they could click on this button and post their blog on my website. I decided to remove this button and create another smaller button on the home page instead labeled “Are you Samantha Joseph? If yes, click here”. This would be at the bottom of the page and will be password-protected, which would direct me to the post-creation page. 
+
+I also learned that the users preferred the different categories on the home page lined up horizontally rather than on top of each other. They saw this as more cluttered and less intuitive. Thus, I made sure to line up the categories horizontally in the final design. I also made sure to include the “Most Recent Posts” on the home page, as users stated that this could attract viewers as soon as they loaded the page. Regarding the actual blog post page, users also stated that they prefer having a layout where the images and/or videos were scattered on the left and right side of the page, over having the images and/or videos sandwiched between chunks of text. The users stated the first structure is more user-friendly, intuitive, and easier to follow with the eyes. Thus, I made sure to incorporate this change into the final design as well. 
+
+
 ## Updated Designs
 
 Show screenshots of your updated design based on the user feedback (\<100 words, \~2 images).
 
+As you can see in these screenshots, I made sure to remove the “Post” button from the top screen and added another button at the bottom of the screen for me to use. I made sure to include the “Most Recent Posts” section on the home page and lined up the different topic categories horizontally. On the blog post page, I made sure that images could be seen on both the left and right sides of the design, not just sandwiched between text. I also played around with different color palettes and decided to change the color theme of my website. 
+
+Link to prototype: https://www.figma.com/proto/iQuzeXhoSWvnLtN3WyGWv3/FinalOne?node-id=1-2&node-type=frame&t=hP5LqMFDaZtu99qW-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1
+
+![Homepage3](image-11.png)
+![OverallPrototype3](image-10.png)
 ## Feedback Summary
 
 Summarize the feedback you received in the lab session and discuss how it influenced your design (\~300 words). 
+
+During the lab session, I got a lot of great feedback as well. One peer stated that while looking at my home page, users may be confused about what to do regarding the topic categories. She stated, “Users will see these categories, but how will they know to click them? How will they know the action which will be carried out if they do click one of these categories?” This was a valid point, and I am glad she gave this feedback. The four categories that I have show topics I am interested in, but users don’t know that if they click a category, they will be directed to blog posts relating to that category. Thus, I added a header stating “Select a category to view related blogs!”. That way, users know what will occur when they click a category. Users also appreciated the drawings and labels of each category, stating that they were eye-catching and helped convey the meaning of what each topic was about. 
+Another peer stated that the color beige I used through the website may be hard to see for certain people, as it is very similar to the background page color of white. I appreciate this feedback as well, as this was an issue that I had not previously seen. The beige could be hard to differentiate from the background, especially for those who are visually impaired. Thus, to combat this, I decided to implement a dark, golden border around each beige shape I used to help users see the different sections. Lastly, users stated that my layout was clean and easy to navigate. They understood how to complete certain tasks such as reading a specific blog or commenting on a blog. 
+
 
 ## Milestones
 
 Outline weekly milestones to plan your expected implementation progress until the end of the semester (\~300 words). 
 
+I have split my plan into 4 weeks below. 
+Week 10 - During this week, I want to create a general layout. I want to create, using HTML, CSS, and JS, all of the individual pages. They will all be static, however, at this point. I also need to make sure that certain features and elements are able to be shown in a single post, such as images and videos. During this week, I will create a class that will then create post objects. This process will be similar to the notecard example we did in recitation.
+Week 11 - During this week, I will do the hardest step of the project. I want to create a long-term data storage component of the website which will store my posts. Thus, short-term storage which we learned in class will not be sufficient. I would need to use bank-end components to handle the data storage and real-time updates. Through my research, I learned that popular databases include Firebase and MongoDB (with Node.js). These tools will be used to store and fetch data. Regarding providing real-time updates, I can also use Firebase or the application WebSockets with a library like Socket.io to put updates to the website.  There are many other popular tools that can be used for this part of my project, and I will continue to do research on the specifics of these. But for now, I am planning on using Firebase, as it seems to be a more simple, user-friendly application with minimal setup. 
+Week 12 - During this week, I want to implement another important feature on the website. As I want myself to only be able to write and submit blog posts onto the website, I need to have some sort of authentication process. According to my research, I will be able to do this by creating a backend, implementing a login route on the server that verifies the user’s password, and if the correct password is entered, then a token must be sent to indicate that the user is authenticated, and the user will be able to post content. Firebase also has a similar feature which I will be able to use if I decide to go with that tool.
+
+
 ### *Implementation Plan*
 
 - [ ] Week 9 Oct 28 \- Nov 1:
   - [X] FP1 due
-  - [ ] ...
   
 - [ ] Week 10 Nov 4 \- Nov 8:   
-  - [ ] FP2 due
+  - [X] FP2 due
+  - [ ] Create a static version of the website
 
-- [ ] Week 11 Nov 11 \- Nov 15:  
-- [ ] Week 12 Nov 18 \- Nov 22:   
-- [ ] Week 13 Nov 25 \- Nov 29:  
+- [ ] Week 11 Nov 11 \- Nov 15: Create a long-term data storage component
+- [ ] Week 12 Nov 18 \- Nov 22: Implement authentication process
+- [ ] Week 13 Nov 25 \- Nov 29: Finishing touches and details
 
   - [ ] Thanksgiving  
-- [ ] Week 14 Dec 2 \- Dec 6:  
+- [ ] Week 14 Dec 2 \- Dec 6:  N/A - Making sure website runs smoothly
   - [ ] FP4 due 
 
 ### *Libraries and Other Components*
 
-List the JS libraries and other components (if applicable) that you plan to use. 
-* 
+For my back-end creation, either Firebase or MongoDB (with Node.js)
+For user-authentication, I can also use Firebase or the application WebSockets with a library such as Socket.io.
 
 
 ## Generative AI Use Plan
 
-Outline how you plan to use Generative AI tools to aid in the implementation (\~300 words).
+I plan on using Generative AI tools such as ChatGPT to help understand how to use certain tools. For example, I have never used Firebase before and need to learn how to use this tool to set up the backend database and authentication system. Thus, I would want to use ChatGPT to teach me the general features of the programming and learn how to connect my back end to my front end as well. I will make sure to use Generative AI responsibly by understanding the information it provides me before applying it to my project responsibly. Thus, I will learn from this experience and be able to apply these tools to other projects. Something that ChatGPT may not be helpful with is programming the specific pages and applications such as the frontend,  backend database, and authentication system portions of my website.  All of these parts are going to be connected and complex, using different tools and systems. I believe that this may be too complex for Generative AI to be programmed, and thus, will not use it for that. I am planning on using Generative AI more to learn how to use these tools and see examples, but then I plan on applying them to my code by myself without assistance. 
 
 ### *Tool Use*
 
- What would you use? Edit the list given your plan. For each tool, explain briefly on what do you expect Generative AI to help you with and what might it not be able to help you with.
-
-* ChatGPT  
-  * I will use it for … because it can help me …  
-  * I will not use it for … because it might not be able to help me with …   
-* GitHub Copilot  
-* ...
+I would use it to learn how certain tools look, how they are used, and in what contents they are used in. However, I won't give AI my issue and then copy the code from it, because I will not learn from this process and it probably won't be able to understand the complexity of the project. I will learn how to apply these tools to my application through the information and examples Generative AI provides, but then I will have to think through how I use this in my own website. 
 
 ### *Responsible Use*
 
-How would you use Generative AI responsibly? 
+I will use it responsibly by not copying any code from it and only learning general topics/applications. 
 
 ---
 
@@ -189,10 +207,9 @@ How would you use Generative AI responsibly?
 
 ## Idea Sketches
 
-### *Idea 1* - Main idea that I will be implementing
+### *Personal Blog * - What I have decided on doing. 
 
 Describe your website (300 words):
-
 The website that I have decided to program is a blog website. I have many hobbies and interests, and I wanted a website that would allow me to express myself through my writing and findings. For example, I have a passion for cooking and baking and have a few American and Indian recipes that I would love to share online. I also love reading books, and want to post my book reviews online as well! Another great example is my deep dives into specific topics of Religion or Politics, including answering questions such as “What historical evidence supports the idea of God?”. All of this information would be included on this website through individual blog posts. 
 
 There will be multiple pages on my website. On the home page, I will have a brief introduction of myself at the top, a breakdown of categories, and then my most recent blog posts. The breakdown of categories will allow users who are interested in a specific topic of my blog to be easily guided to those blog posts. For example, if someone is interested in my recipes, then they can click on the “My Recipe Book” category which will take them to all the blogs that I have posted regarding cooking and baking. Each category will be an icon on the home page and contain a label at the bottom. The target audience is anyone interested in learning about the topics that I have researched or provided information on, such as cooking or politics. 
@@ -201,18 +218,15 @@ This website will be interesting and engaging because I plan on using not only t
 
 ![Website Design 2](image-4.png)
 
+### *Personal Portfolio Website*
 
-### *Idea 2*
-
-* What is the basic idea of your final project? (1-2 sentences)  
-* How do you plan to make your design interactive and engaging?  
-* How do you plan to make your design accessible?  
-* What information do you specifically want to convey and include on your website?
+Idea of creating a personal portfolio where I can portray my previous UX design projects and introduce myself. I planned on making this engaging by including exciting colors and animations. I would make sure it is accessible by making sure that the HTML is organized properly with correct headers, to make sure that screen readers can interpret them, and also make sure my theme and colors are accessible for the visually impaired. I want to include information about me, my resume information, and work/projects. My work and projects will go through the entire process of the application I created, including research, insights, testing, prototypes, etc.
 
 ![Website Design 1](image-3.png)
 
-### *Idea 3*
+### *15-121 Website Idea*
 
+This past summer, I was a UI/UX design intern and redesigned CMU's 15-121 website. I have created the figma prototype, and was planning on beginning the coding process of this project. I planned on making this engaging by including exciting colors and animations. I would make sure it is accessible by making sure that the HTML is organized properly with correct headers, to make sure that screen readers can interpret them, and also make sure my theme and colors are accessible for the visually impaired. I want to include information about the course, professor, and resources available. There would have been a ton of information on this website, from assignments, to recordings, to the syllabus.
 ![Website Design 3](image-5.png)
 
 ## Feedback Summary
