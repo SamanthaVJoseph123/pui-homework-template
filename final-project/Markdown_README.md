@@ -199,7 +199,8 @@ There will be multiple pages on my website. On the home page, I will have a brie
 
 This website will be interesting and engaging because I plan on using not only text but images and icons as well throughout the website and within the blog post. I also want the user to be able to comment and “heart” the blog post to gain reactions to my work. I believe this will make the website more interactive and attractive for users. 
 
-![Website Design 1](image-3.png)
+![Website Design 2](image-4.png)
+
 
 ### *Idea 2*
 
@@ -208,7 +209,7 @@ This website will be interesting and engaging because I plan on using not only t
 * How do you plan to make your design accessible?  
 * What information do you specifically want to convey and include on your website?
 
-![Website Design 2](image-4.png)
+![Website Design 1](image-3.png)
 
 ### *Idea 3*
 
