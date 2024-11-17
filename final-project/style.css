@@ -110,7 +110,7 @@ Position feature allows you to place .overaly precisely within the
 .notecard-inner-box{
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 10px 30px 0px 30px;
 }
 
 .notecard-outer-box{
@@ -136,11 +136,11 @@ Position feature allows you to place .overaly precisely within the
     font-weight: 400;
     font-style: normal;
     font-size: 1.5rem;
-    background-color: rgb(121, 187, 121);
+    background-color: rgb(106, 159, 210);
     margin: 5px 5px 5px 40px;
     padding: 10px 20px 10px 20px;
     border-radius: 25px;
-    border: 2px solid darkgreen;
+    border: 2px solid rgb(6, 103, 207);
 }
 
 .notecard-body{
