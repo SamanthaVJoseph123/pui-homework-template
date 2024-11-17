@@ -19,7 +19,11 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    display: flex;
     /* Hidden prevents the horizonal scrollbar caused by content overflowing the viewport */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 /* Absolute will take elements out of the normal document flow
@@ -93,20 +97,31 @@ Position feature allows you to place .overaly precisely within the
     object-fit: contain;
 }
 
-.notecard-box{
+.notecard-container{
     display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 850px;
+    height: auto;
     background-color: rgb(246, 246, 246);
+    margin: 20px auto;
+    padding: 20px;
+}
+.notecard-inner-box{
+    display: flex;
     flex-direction: column;
-    width: 500px;
-    height: 300px;
-    padding: 400px;
+    padding: 30px;
 }
 
+.notecard-outer-box{
+    display: flex;
+    flex-direction: row;
+}
 
 .notecard-header{
     display:flex;
     flex-direction: row;
-    background-color: pink;
+    align-items: center;
 }
 
 .notecard-title{
@@ -114,24 +129,36 @@ Position feature allows you to place .overaly precisely within the
     font-weight: 500;
     font-style: normal;
     font-size: 2rem;
+    padding: 10px;
 }
 .notecard-topic{
     font-family: "Source Serif 4", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 2rem;
-    background-color: green;
+    font-size: 1.5rem;
+    background-color: rgb(121, 187, 121);
+    margin: 5px 5px 5px 40px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
+    border: 2px solid darkgreen;
 }
 
 .notecard-body{
     font-family: "Source Serif 4", serif;
     font-weight: 400;
     font-style: normal;
+    padding: 10px;
 }
 .notecard-footer{
     font-family: "Source Serif 4", serif;
     font-weight: 400;
     font-style: normal;
     color: grey;
+    padding: 10px
 }
 
+.notecard-image{
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+}
