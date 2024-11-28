@@ -72,10 +72,12 @@ function updateElement(notecard){
   const noteTitleElement = notecard.element.querySelector('.notecard-title');
   const noteBodySummaryElement = notecard.element.querySelector('.notecard-summary-body');
   const noteTopicElement = notecard.element.querySelector('.notecard-topic');
+  const noteLinkElement = notecard.element.querySelector('.notecard-link');
 
   noteImageElement.src = notecard.noteImageURL;
   noteImageElement.alt = notecard.noteImageText;
   noteTitleElement.innerText = notecard.noteTitle;
   noteBodySummaryElement.innerText = notecard.noteSummaryBody;
   noteTopicElement.innerText = notecard.noteTopic;
+  noteLinkElement.href = notecard.noteLink;
 }
