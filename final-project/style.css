@@ -1,4 +1,4 @@
-.image-container{
+.top-fold-container{
     position: relative;
     width: 100vw;
     /* vw means viewport width, which is a measurement of the viewport's width
@@ -8,17 +8,15 @@
     "absolute" takes element out of the normal document flow and positions it relative to the nearest positioned ancestor */ 
 }
 
-.image-container img{
-    width: 100vw; 
+.top-fold-image-container{
+    width: 100vw;
     height: auto;
     display: block; 
     /* Block prevents incline spacing issues */
 }
 
 body{
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     display: flex;
     /* Hidden prevents the horizonal scrollbar caused by content overflowing the viewport */
     flex-direction: column;
@@ -29,10 +27,10 @@ body{
 /* Absolute will take elements out of the normal document flow
 Absolute positions .overlay elements relative to its nearest
 ancestor with a position value other than static
-Position feature allows you to place .overaly precisely within the
+Position feature allows you to place .overlay precisely within the
 .image-container using the top, left, right, or bottom properties */
 
-.left-button {
+.top-fold-left-button {
     position: absolute;
     top: 30px;
     left: 30px;
@@ -41,7 +39,7 @@ Position feature allows you to place .overaly precisely within the
     font-size:x-large;
 }
 
-.right-button {
+.top-fold-right-button {
     position: absolute;
     top: 30px;
     right: 50px;
@@ -54,12 +52,11 @@ Position feature allows you to place .overaly precisely within the
     display: flex;
     flex-direction: column;
     align-items:flex-start;
+    width: 600px;
 }
 
 .inner-intro-title-box{
     width: auto; 
-    /* width prev 40% */
-    /* padding: 50px 0px 0px 20%; */
     padding: 0;
     font-family: "Source Serif 4", serif;
     font-weight: 500;
@@ -70,8 +67,6 @@ Position feature allows you to place .overaly precisely within the
 
 .inner-intro-text-box{
     width: auto;
-    /* width prev 40% */
-    /* padding: 10px 0px 0px 23%; */
     padding: 0;
     font-family: "Source Serif 4", serif;
     font-weight: 400;
@@ -86,7 +81,6 @@ Position feature allows you to place .overaly precisely within the
     justify-content:center;
     align-items: center;
     gap: 20px;
-    padding: 20px 400px;
 }
 
 .inner-intro-image-box{
@@ -99,14 +93,15 @@ Position feature allows you to place .overaly precisely within the
 
 .notecard-container{
     display: flex;
-    justify-content:center;
-    align-items: center;
-    width: 850px;
-    height: auto;
+    /* justify-content:center; */
+    /* align-items: center; */
+    width: 825px;
+    height: 300px;
     background-color: rgb(246, 246, 246);
     margin: 20px auto;
     padding: 20px;
 }
+
 .notecard-inner-box{
     display: flex;
     flex-direction: column;
@@ -129,7 +124,7 @@ Position feature allows you to place .overaly precisely within the
     font-weight: 500;
     font-style: normal;
     font-size: 2rem;
-    padding: 10px;
+    padding: 5px;
 }
 .notecard-topic{
     font-family: "Source Serif 4", serif;
@@ -148,13 +143,14 @@ Position feature allows you to place .overaly precisely within the
     font-weight: 400;
     font-style: normal;
     padding: 10px;
+    width: 510px;
 }
 .notecard-footer{
     font-family: "Source Serif 4", serif;
     font-weight: 400;
     font-style: normal;
     color: grey;
-    padding: 10px
+    padding: 10px;
 }
 
 .notecard-image{

@@ -2,8 +2,9 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 
 class Notecard {
-  constructor(imageURL, title, body) {
+  constructor(imageURL, imageText, title, body) {
     this.noteImageURL = imageURL;
+    this.noteImageText = imageText;
     this.noteTitle = title;
     this.noteBody = body;
     this.element = null;
@@ -21,22 +22,24 @@ class Notecard {
 
 const notecardSet = new Set();
 
-function addNewNote(imageURL, title, body){
-  const notecard = new Notecard(imageURL, title, body);
+function addNewNote(imageURL, imageText, title, body){
+  const notecard = new Notecard(imageURL, imageText, title, body);
   notecardSet.add(notecard);
   return notecard;
 }
 
 const notecardOne = addNewNote(
   "../assets/finalProjectAssets/bookCover.jpg",
+  "Alternate Text for post 1",
   "The first note title",
-  "The first note body"
+  "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
 );
 
 const notecardTwo = addNewNote(
   "../assets/finalProjectAssets/bookCover.jpg",
+  "Alternate Text for post 2",
   "The second note title",
-  "The second note body"
+  "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
 );
 
 for (const notecard of notecardSet){
@@ -61,6 +64,7 @@ function updateElement(notecard){
   const noteBodyElement = notecard.element.querySelector('.notecard-body');
 
   noteImageElement.src = notecard.noteImageURL;
+  noteImageElement.alt = notecard.noteImageText;
   noteTitleElement.innerText = notecard.noteTitle;
   noteBodyElement.innerText = notecard.noteBody;
 }
