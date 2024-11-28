@@ -2,13 +2,14 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 
 class Notecard {
-  constructor(imageURL, imageText, title, summaryBody, postBody, topic) {
+  constructor(imageURL, imageText, title, summaryBody, postBody, topic, link) {
     this.noteImageURL = imageURL;
     this.noteImageText = imageText;
     this.noteTitle = title;
     this.noteSummaryBody = summaryBody;
     this.notePostBody = postBody;
     this.noteTopic = topic;
+    this.noteLink = link;
     this.element = null;
   }
 }
@@ -24,8 +25,8 @@ class Notecard {
 
 const notecardSet = new Set();
 
-function addNewNote(imageURL, imageText, title, summaryBody, postBody, topic){
-  const notecard = new Notecard(imageURL, imageText, title, summaryBody, postBody, topic);
+function addNewNote(imageURL, imageText, title, summaryBody, postBody, topic, link){
+  const notecard = new Notecard(imageURL, imageText, title, summaryBody, postBody, topic, link);
   notecardSet.add(notecard);
   return notecard;
 }
@@ -36,7 +37,8 @@ const notecardOne = addNewNote(
   "The first note title",
   "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
   "This is the postBody for Post 1 lorem ipsum",
-  "Adventure"
+  "Adventure",
+  "./index3.html"
 );
 
 const notecardTwo = addNewNote(
@@ -45,7 +47,8 @@ const notecardTwo = addNewNote(
   "The second note title",
   "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
   "This is the postBody for Post 1 lorem ipsum",
-  "Romance"
+  "Romance",
+  "./index3.html"
 );
 
 for (const notecard of notecardSet){
