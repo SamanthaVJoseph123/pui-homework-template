@@ -2,11 +2,13 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 
 class Notecard {
-  constructor(imageURL, imageText, title, body) {
+  constructor(imageURL, imageText, title, summaryBody, postBody, topic) {
     this.noteImageURL = imageURL;
     this.noteImageText = imageText;
     this.noteTitle = title;
-    this.noteBody = body;
+    this.noteSummaryBody = summaryBody;
+    this.notePostBody = postBody;
+    this.noteTopic = topic;
     this.element = null;
   }
 }
@@ -22,8 +24,8 @@ class Notecard {
 
 const notecardSet = new Set();
 
-function addNewNote(imageURL, imageText, title, body){
-  const notecard = new Notecard(imageURL, imageText, title, body);
+function addNewNote(imageURL, imageText, title, summaryBody, postBody, topic){
+  const notecard = new Notecard(imageURL, imageText, title, summaryBody, postBody, topic);
   notecardSet.add(notecard);
   return notecard;
 }
@@ -32,14 +34,18 @@ const notecardOne = addNewNote(
   "../assets/finalProjectAssets/bookCover.jpg",
   "Alternate Text for post 1",
   "The first note title",
-  "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+  "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+  "This is the postBody for Post 1 lorem ipsum",
+  "Adventure"
 );
 
 const notecardTwo = addNewNote(
   "../assets/finalProjectAssets/bookCover.jpg",
   "Alternate Text for post 2",
   "The second note title",
-  "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+  "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+  "This is the postBody for Post 1 lorem ipsum",
+  "Romance"
 );
 
 for (const notecard of notecardSet){
@@ -61,10 +67,12 @@ function createElement(notecard){
 function updateElement(notecard){
   const noteImageElement = notecard.element.querySelector('.notecard-image');
   const noteTitleElement = notecard.element.querySelector('.notecard-title');
-  const noteBodyElement = notecard.element.querySelector('.notecard-body');
+  const noteBodySummaryElement = notecard.element.querySelector('.notecard-summary-body');
+  const noteTopicElement = notecard.element.querySelector('.notecard-topic');
 
   noteImageElement.src = notecard.noteImageURL;
   noteImageElement.alt = notecard.noteImageText;
   noteTitleElement.innerText = notecard.noteTitle;
-  noteBodyElement.innerText = notecard.noteBody;
+  noteBodySummaryElement.innerText = notecard.noteSummaryBody;
+  noteTopicElement.innerText = notecard.noteTopic;
 }
