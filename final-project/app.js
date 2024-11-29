@@ -2,14 +2,13 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 
 class Notecard {
-  constructor(imageURL, imageText, title, summaryBody, postBody, topic, link) {
+  constructor(imageURL, imageText, title, summaryBody, postBody, topic) {
     this.noteImageURL = imageURL;
     this.noteImageText = imageText;
     this.noteTitle = title;
     this.noteSummaryBody = summaryBody;
     this.notePostBody = postBody;
     this.noteTopic = topic;
-    this.noteLink = link;
     this.element = null;
   }
 }
@@ -25,8 +24,8 @@ class Notecard {
 
 const notecardSet = new Set();
 
-function addNewNote(imageURL, imageText, title, summaryBody, postBody, topic, link){
-  const notecard = new Notecard(imageURL, imageText, title, summaryBody, postBody, topic, link);
+function addNewNote(imageURL, imageText, title, summaryBody, postBody, topic){
+  const notecard = new Notecard(imageURL, imageText, title, summaryBody, postBody, topic);
   notecardSet.add(notecard);
   return notecard;
 }
@@ -37,8 +36,7 @@ const notecardOne = addNewNote(
   "The first note title",
   "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
   "This is the postBody for Post 1 lorem ipsum",
-  "Adventure",
-  "./index3.html"
+  "Adventure"
 );
 
 const notecardTwo = addNewNote(
@@ -47,8 +45,7 @@ const notecardTwo = addNewNote(
   "The second note title",
   "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
   "This is the postBody for Post 1 lorem ipsum",
-  "Romance",
-  "./index3.html"
+  "Romance"
 );
 
 for (const notecard of notecardSet){
@@ -60,10 +57,8 @@ function createElement(notecard){
   const template = document.querySelector('#notecard-template');
   const clone = template.content.cloneNode(true);
   notecard.element = clone.querySelector('.notecard-container');
-
   const notecardListElement = document.querySelector('#notecard-list');
   notecardListElement.append(clone);
-
   updateElement(notecard);
 }
 
@@ -72,12 +67,10 @@ function updateElement(notecard){
   const noteTitleElement = notecard.element.querySelector('.notecard-title');
   const noteBodySummaryElement = notecard.element.querySelector('.notecard-summary-body');
   const noteTopicElement = notecard.element.querySelector('.notecard-topic');
-  const noteLinkElement = notecard.element.querySelector('.notecard-link');
 
   noteImageElement.src = notecard.noteImageURL;
   noteImageElement.alt = notecard.noteImageText;
   noteTitleElement.innerText = notecard.noteTitle;
   noteBodySummaryElement.innerText = notecard.noteSummaryBody;
   noteTopicElement.innerText = notecard.noteTopic;
-  noteLinkElement.href = notecard.noteLink;
 }
