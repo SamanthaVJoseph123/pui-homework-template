@@ -22,7 +22,6 @@ if (localStorage.getItem('storedNotes') == null) {
     notecardSet = new Set(notecardArray);
 }
 
-
 function addNewNote(imageURL, imageText, title, summaryBody, postBody, topic){
     const notecard = new Notecard(imageURL, imageText, title, summaryBody, postBody, topic);
     notecardSet.add(notecard);
@@ -91,10 +90,13 @@ function createElement(notecard){
     noteTopicElement.innerText = notecard.noteTopic;
   }
 
+//   only runs on the home page
 if (localStorage.getItem('storedNotes') != null && document.getElementById('notecard-template') != null) {
     retrieveFromLocalStorage();
 }
-if (document.getElementById('notecard-template') == null) {
+
+// only runs on the Make Post page
+if (document.getElementById('btn1') != null) {
     button1.addEventListener('click', fun1);
  }
 
