@@ -254,9 +254,10 @@ function saveToLocalStorageTwo() {
     retrieveFromLocalStorageTwo();
   }
 
+const x = null;
 function retrieveFromLocalStorageTwo() {
     const storedData = localStorage.getItem('storedNotes2');
-    const x = JSON.parse(storedData);
+    x = JSON.parse(storedData);
     console.log("I am here in retrieveLS2");
     console.log(x);
 }
