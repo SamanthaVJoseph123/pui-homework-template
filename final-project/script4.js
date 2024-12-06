@@ -136,7 +136,6 @@ if (localStorage.getItem('storedNotes2') == null) {
 }
 
 
-
 function addNewNote(imageURL, imageText, title, summaryBody, postBody, topic, link){
     const notecard = new Notecard(imageURL, imageText, title, summaryBody, postBody, topic, link);
     notecardSet.add(notecard);
@@ -180,7 +179,6 @@ function fun1() {
     saveToLocalStorageOne();
     saveToLocalStorageTwo();
 }
-
 
 function saveToLocalStorageOne() {
     const notecardArray = Array.from(notecardSet);

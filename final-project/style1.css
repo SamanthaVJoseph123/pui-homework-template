@@ -104,7 +104,8 @@ Position feature allows you to place .overlay precisely within the
     width: 95%;
     max-width: 825px;
     height: auto;
-    background-color: #FFF9EF;
+    /* background-color: #FFF9EF; */
+    background-color:#fffcf6;
     margin: 20px auto;
     padding: 20px;
     outline: 2px solid #d9c6a4; 

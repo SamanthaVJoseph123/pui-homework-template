@@ -5,6 +5,12 @@
     width: 100%;
 }
 
+.sub-title{
+    padding: 0px;
+    margin: 0px;
+    font-size: 2.3em;
+}
+
 .left-button {
     text-align: left;
     color: black;
@@ -34,8 +40,10 @@ input[type=text], textarea{
 
 input[type=button]{
     font-size: 3em;
-    color: blue;
-    margin: 10px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    margin: 50px 0px 0px 0px;
+
 }
 
 label {
@@ -55,10 +63,17 @@ label {
     /* align-items: center; */
     /* margin: 0 200px; */
     outline: 2px solid #d9c6a4; 
-    background-color: #FFF9EF;
+    background-color: #fffcf6;
 }
 
-h2,h5 {
+h3,h1 {
     font-family: "Source Serif 4", serif;
     font-weight: normal;
+}
+
+.top-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
