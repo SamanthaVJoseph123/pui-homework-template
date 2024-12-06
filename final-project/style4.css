@@ -23,11 +23,34 @@
 
 input[type=text]{
     font-size: 1.4em;
+
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
 }
 
 input[type=button]{
     font-size: 1.1em;
     color: blue;
+    margin-top: 10px;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1em;
+}
+
+textarea{
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    resize: vertical;
 }
 
 .outer-container{
@@ -35,5 +58,10 @@ input[type=button]{
     justify-content: center;
     flex-direction: column;
     align-items:flex-start;
-    align-items: center;
+    /* align-items: center; */
+}
+
+h2,h5 {
+    font-family: "Source Serif 4", serif;
+    font-weight: normal;
 }
