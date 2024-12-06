@@ -43,7 +43,7 @@ Position feature allows you to place .overlay precisely within the
     position: absolute;
     top: 30px;
     right: 50px;
-    color: black;
+    color: white;
     text-decoration: none;
     font-size:x-large;
 }
