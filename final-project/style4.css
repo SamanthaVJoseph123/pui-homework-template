@@ -27,7 +27,7 @@
     padding: 20px 30px 20px 20px;
 }
 
-input[type=text], textarea{
+input[type=text], textarea, select{
     font-family: "Source Serif 4", serif;
     font-size: 1em;
     /* margin: 20px; */
@@ -43,7 +43,6 @@ input[type=button]{
     color: rgb(0, 0, 0);
     padding: 10px;
     margin: 50px 0px 0px 0px;
-
 }
 
 label {
