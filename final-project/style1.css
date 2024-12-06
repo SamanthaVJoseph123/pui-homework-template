@@ -9,9 +9,13 @@
 }
 
 .top-fold-image-container{
-    width: 100vw;
+    width: 100%;
     height: auto;
-    display: block; 
+    display: block;
+
+    /* width: 100vw;
+    height: auto;
+    display: block;  */
     /* Block prevents incline spacing issues */
 }
 
@@ -32,7 +36,7 @@ Position feature allows you to place .overlay precisely within the
 
 .top-fold-left-button {
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 30px;
     color: black;
     text-decoration: none;
@@ -41,7 +45,7 @@ Position feature allows you to place .overlay precisely within the
 
 .top-fold-right-button {
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 50px;
     color: white;
     text-decoration: none;
