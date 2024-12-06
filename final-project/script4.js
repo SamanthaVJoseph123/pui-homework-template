@@ -217,7 +217,20 @@ function createElement(notecard){
     const noteTopicElement = notecard.element.querySelector('.notecard-topic');
     const noteLinkElement = notecard.element.querySelector('.notecard-link');
 
+
+
+    // const postImage = document.querySelector(".post-image");
+    // postImage.src = x[noteIndex].imageURL;
     noteImageElement.src = notecard.noteImageURL;
+
+    noteImageElement.onerror = function (){
+        console.log("Image was not found");
+        noteImageElement.src = "../assets/finalProjectAssets/bookCover.jpg";
+    };
+
+
+
+
     noteImageElement.alt = notecard.noteImageText;
     noteTitleElement.innerText = notecard.noteTitle;
     noteBodySummaryElement.innerText = notecard.noteSummaryBody;
