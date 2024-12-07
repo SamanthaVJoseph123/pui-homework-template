@@ -74,4 +74,43 @@ if (document.getElementById('btn3') != null) {
     buttonElement.addEventListener('click', addComment);
  }
 
+ function addComment(){
+    let theIndex = noteIndex;
+    if (theIndex && notecardDictionary[theIndex]) {
+        const commentBox = document.getElementById("comment");
+        const newComment = commentBox.value.trim();
+
+        if (newComment){
+            notecardDictionary[theIndex].comments = notecardDictionary[theIndex].comments || [];
+            notecardDictionary[theIndex].comments.push(newComment);
+
+            localStorage.setItem('storedNotes', JSON.stringify(notecardDictionary));
+            commentBox.value = "";
+            displayComments();
+        } else {
+            alert("Please enter a comment");
+        }
+
+    } else {
+        alert("note not found");
+    }
+ }
+
+ function displayComments(){
+    const theIndex = noteIndex;
+    const commentsContainer = document.getElementById("comments-container");
+    if (theIndex && notecardDictionary[theIndex] && notecardDictionary[theIndex].comments){
+        commentsContainer.innerHTML = "";
+        notecardDictionary[theIndex].comments.forEach(comment => {
+            const commentElement = document.createElement("div");
+            commentElement.classList.add("comment-style");
+            commentElement.classList.add("comment");
+            commentElement.textContent = comment;
+            commentsContainer.appendChild(commentElement);
+        });
+    }
+
+ }
+ window.onload = displayComments;
+
  

@@ -33,7 +33,7 @@ function addNotecardToDictionary(index, imageURL, imageText, title, summaryBody,
 
 // class Notecard which will create each INSTANCE
 class Notecard {
-    constructor(imageURL, imageText, title, summaryBody, postBody, topic, link) {
+    constructor(imageURL, imageText, title, summaryBody, postBody, topic, link, comments) {
       this.noteImageURL = imageURL;
       this.noteImageText = imageText;
       this.noteTitle = title;
@@ -41,12 +41,13 @@ class Notecard {
       this.notePostBody = postBody;
       this.noteTopic = topic;
       this.noteLink = link;
+      this.noteComments = comments;
       this.element = null;
     }
 }
 
 // these elements are on index4.html
-// this is the "Specific Post page"
+// this is the "Make Post page"
 const titleElement = document.getElementById('title');
 const topicElement = document.getElementById('topic');
 const summaryElement = document.getElementById('summary');
@@ -86,7 +87,7 @@ function fun1() {
     let link = "./index3.html" + "?note=" + String(index);
 
     // call function which creates notecard with associated index
-    addNotecardToDictionary(index, imageURLElement.value, imageALTElement.value, titleElement.value, summaryElement.value, bodyElement.value, topicElement.value, link)
+    addNotecardToDictionary(index, imageURLElement.value, imageALTElement.value, titleElement.value, summaryElement.value, bodyElement.value, topicElement.value, link, []);
 
     //save new notecard into local storage
     saveToLocalStorage();
