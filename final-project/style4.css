@@ -39,10 +39,15 @@ input[type=text], textarea, select{
 }
 
 input[type=button]{
-    font-size: 3em;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    margin: 50px 0px 0px 0px;
+    font-size: 1.5em;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    margin: 20px auto 0 auto;
+    width: fit-content;
+    display: block;
+    border: 2px solid rgb(99, 5, 5);
+    border-radius: 10px;
+    background-color:rgb(223, 54, 54);
 }
 
 label {
