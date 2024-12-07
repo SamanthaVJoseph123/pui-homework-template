@@ -69,10 +69,9 @@ function saveToLocalStorageDICT() {
     localStorage.setItem('storedNotes', notecardDictionaryString);
 }
 
-// function retrieveFromLocalStorageDICT() {
-//     let notecardDictionaryString = localStorage.getItem('storedNotes');
-//     console.log("HELLO");
-//     console.log(notecardDictionaryString);
-//     notecardDictionary = JSON.parse(notecardDictionaryString);
-//     return notecardDictionary;
-// }
+if (document.getElementById('btn3') != null) {
+    const buttonElement = document.getElementById('btn3');
+    buttonElement.addEventListener('click', addComment);
+ }
+
+ 
