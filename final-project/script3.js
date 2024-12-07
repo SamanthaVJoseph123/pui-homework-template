@@ -5,10 +5,6 @@ const noteIndex = urlParams.get('note');
 console.log("This is the noteIndex:");
 console.log(noteIndex);
 
-// if (typeof noteIndex === "string"){
-//     console.log("noteIndex is a string")
-// }
-
 let notecardDictionaryString = localStorage.getItem('storedNotes');
 let notecardDictionary = JSON.parse(notecardDictionaryString);
 console.log("This is the notecardDictionary");
@@ -36,21 +32,47 @@ if (notecardDictionary[noteIndex]){
     console.error("note not found");
 }
 
-// need to keep a counter of deleted posts. To make sure that the other counter is not messed up. 
-// must include this JS file as well
+if (document.getElementById('btn2') != null) {
+    const buttonElement = document.getElementById('btn2');
+    buttonElement.addEventListener('click', removePost);
+ }
 
-// if (document.getElementById('btn2') != null) {
-//     button1.addEventListener('click', fun2);
-//  }
+function removePost() {
+    // notecardDictionary = retrieveFromLocalStorageDICT();
+    delete notecardDictionary[noteIndex];
+    saveToLocalStorageDICT();
 
-// function fun2(){
-//     const storedData2 = localStorage.getItem('storedNotes2');
-//     const x = JSON.parse(storedData2);
-//     delete x[String(noteIndex)];
+    let removedPostNum = retrieveFromLocalStorageNUM();
+    removedPostNum += 1;
+    saveToLocalStorageNUM(removedPostNum);
 
-//     const arrayIndex = noteIndex - 1;
-//     const storedData1 = localStorage.getItem('storedNotes1');
-//     const y = JSON.parse(storedData1);
+    window.location.href = "index.html"
+}
 
+function saveToLocalStorageNUM(removedPostNum) {
+    localStorage.setItem('removedPostNum', removedPostNum.toString());
+    console.log(removedPostNum);
+}
+
+function retrieveFromLocalStorageNUM() {
+    let removedPostNum = localStorage.getItem('removedPostNum');
+    if (removedPostNum === null) {
+        removedPostNum = 0;
+    } else {
+        removedPostNum = Number(removedPostNum);
+    }
+    return removedPostNum;
+}
+
+function saveToLocalStorageDICT() {
+    const notecardDictionaryString = JSON.stringify(notecardDictionary);
+    localStorage.setItem('storedNotes', notecardDictionaryString);
+}
+
+// function retrieveFromLocalStorageDICT() {
+//     let notecardDictionaryString = localStorage.getItem('storedNotes');
+//     console.log("HELLO");
+//     console.log(notecardDictionaryString);
+//     notecardDictionary = JSON.parse(notecardDictionaryString);
+//     return notecardDictionary;
 // }
-
