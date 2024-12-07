@@ -167,16 +167,26 @@
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 
+let storedNotes = localStorage.getItem('storedNotes');
+if (storedNotes === null || storedNotes === undefined || storedNotes === "undefined") {
+    localStorage.setItem('storedNotes', JSON.stringify({}));
+    storedNotes = JSON.strinfigy({});
+}
+
+let notecardDictionary = JSON.parse(storedNotes);
+
 // code defines notecardDictionary
 // if no notecards are present, then notecardDictionary = {}
 // if notecards are present, we retrieve from local storage and set to notecardDictionary
-let notecardDictionary = {};
-if (localStorage.getItem('storedNotes') == null) {
-    notecardDictionary = {};
-} else {
-    const notecardDictionaryString = localStorage.getItem('storedNotes');
-    notecardDictionary = JSON.parse(notecardDictionaryString);
-}
+
+//old code which had issues
+// let notecardDictionary = {};
+// if (localStorage.getItem('storedNotes') == null) {
+//     notecardDictionary = {};
+// } else {
+//     const notecardDictionaryString = localStorage.getItem('storedNotes');
+//     notecardDictionary = JSON.parse(notecardDictionaryString);
+// }
 
 // function to create a new notecard INSTANCE to add notecardDictionary OBJECT
 function addNotecardToDictionary(index, imageURL, imageText, title, summaryBody, postBody, topic, link) {
@@ -218,15 +228,15 @@ function fun1() {
     // index = current dictionary length + 1
     // if there are 2 posts currently, then the next post added will have index = 3
     let index = null;
-    if (notecardDictionary == null){
-        index = "1";
+    if (Object.keys(notecardDictionary).length === 0){
+        index = 1;
     } else {
-        let dictionaryLength = notecardDictionary.length;
-        index = String(dictionaryLength + 1);
+        let dictionaryLength = Object.keys(notecardDictionary).length;
+        index = dictionaryLength + 1;
     }
 
     // create link which includes index value
-    let link = "./index3.html" + "?note=" + index;
+    let link = "./index3.html" + "?note=" + String(index);
 
     // call function which creates notecard with associated index
     addNotecardToDictionary(index, imageURLElement.value, imageALTElement.value, titleElement.value, summaryElement.value, bodyElement.value, topicElement.value, link)
@@ -242,6 +252,8 @@ function saveToLocalStorage() {
 
 function retrieveFromLocalStorage() {
     let notecardDictionaryString = localStorage.getItem('storedNotes');
+    console.log("HELLO");
+    console.log(notecardDictionaryString);
     notecardDictionary = JSON.parse(notecardDictionaryString);
 
     for (const notecard of Object.values(notecardDictionary)){
@@ -285,5 +297,5 @@ if (localStorage.getItem('storedNotes') != null && document.getElementById('note
 
 // only runs on the Make Post page
 if (document.getElementById('btn1') != null) {
-    button1.addEventListener('click', fun1);
+    buttonElement.addEventListener('click', fun1);
  }
