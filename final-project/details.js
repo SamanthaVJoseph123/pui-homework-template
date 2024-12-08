@@ -1,20 +1,35 @@
 const  notecardDictionaryString = {
     1: {
-        "imageURL": "blah.com",
-        "imageText": "blah1",
-        "title": "blah2",
-        "summaryBody": "blah3",
-        "postBody": "blah4",
-        "topic": "blah5",
-        "link": "blahblah.com"
+        "noteImageURL": "blah.com",
+        "noteImageText": "blah1",
+        "noteTitle": "blah2",
+        "noteSummaryBody": "blah3",
+        "notePostBody": "blah4",
+        "noteTopic": "Fantasy",
+        "noteLink": "blahblah.com",
+        "element": null,
+        "comment":["hello?","hi?","i love you?"]
     },
     2: {
-        "imageURL": "sam.com",
-        "imageText": "sam1",
-        "title": "sam2",
-        "summaryBody": "sam3",
-        "postBody": "sam4",
-        "topic": "sam5",
-        "link": "samsam.com"
+        "noteImageURL": "blah.com",
+        "noteImageText": "blah1",
+        "noteTitle": "blah2",
+        "noteSummaryBody": "blah3",
+        "notePostBody": "blah4",
+        "noteTopic": "Romance",
+        "noteLink": "blahblah.com",
+        "element": null,
+        "comment":["hello?","hi?","i love you?"]
+    },
+    3: {
+        "noteImageURL": "blah.com",
+        "noteImageText": "blah1",
+        "noteTitle": "blah2",
+        "noteSummaryBody": "blah3",
+        "notePostBody": "blah4",
+        "noteTopic": "Science Fiction",
+        "noteLink": "blahblah.com",
+        "element": null,
+        "comment":["hello?","hi?","i love you?"]
     }
 };

@@ -1,78 +1,81 @@
-// THIS CODE IS NOT NECESSARY
+const topics = [
+    "Fantasy", 
+    "Science Fiction", 
+    "Romance", 
+    "Historical Fiction",
+    "Horror",
+    "Thriller",
+    "Mystery",
+    "Literature"
+];
 
-// const queryString = window.location.search;
-// const params = new URLSearchParams(queryString);
+let x = localStorage.getItem('storedNotes');
+let notecardDictionaryString = JSON.parse(x);
 
-// class Notecard {
-//   constructor(imageURL, imageText, title, summaryBody, postBody, topic) {
-//     this.noteImageURL = imageURL;
-//     this.noteImageText = imageText;
-//     this.noteTitle = title;
-//     this.noteSummaryBody = summaryBody;
-//     this.notePostBody = postBody;
-//     this.noteTopic = topic;
-//     this.element = null;
-//   }
-// }
+let topicCounts = [];
 
-// // const notecardOne= new Notecard('test-image', 'test-title', 'test-body');
-// // "this" keyword refers to the Notecard object that the constructor function creates
+if (Object.keys(notecardDictionaryString).length > 0){
+    for (let i=0; i < topics.length; i++) {
+        const currentTopic = topics[i];
+        let count = 0;
 
-// // EXAMPLE:
-// // const notecardOne = new Notecard('test-image', 'test-title', 'test-body');
-// // notecardOne.noteImageURL;
-// // notecardOne.noteTitle;
-// // notecardOne.noteBody;
+        for (const key in notecardDictionaryString) {
+            const note = notecardDictionaryString[key];
+            if (note.noteTopic == currentTopic){
+                count++;
+            }
+        }
 
-// const notecardSet = new Set();
+        if (count > 0){
+            topicCounts.push({topic: currentTopic, count: count});
+        }
+    }
+} else {
+    topicCounts = [];
+}
 
-// function addNewNote(imageURL, imageText, title, summaryBody, postBody, topic){
-//   const notecard = new Notecard(imageURL, imageText, title, summaryBody, postBody, topic);
-//   notecardSet.add(notecard);
-//   return notecard;
-// }
+// var dataset = [80,100,56,120,180,30,40,120,160];
 
-// const notecardOne = addNewNote(
-//   "../assets/finalProjectAssets/bookCover.jpg",
-//   "Alternate Text for post 1",
-//   "The first note title",
-//   "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-//   "This is the postBody for Post 1 lorem ipsum",
-//   "Adventure"
-// );
+const svgWidth = 500, svgHeight = 300, barPadding = 5;
 
-// const notecardTwo = addNewNote(
-//   "../assets/finalProjectAssets/bookCover.jpg",
-//   "Alternate Text for post 2",
-//   "The second note title",
-//   "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-//   "This is the postBody for Post 1 lorem ipsum",
-//   "Romance"
-// );
+if (topicCounts.length > 0){
+    barWidth = svgWidth / topicCounts.length;
+} else {
+    barWidth = 0;
+}
 
-// for (const notecard of notecardSet){
-//   console.log(notecard);
-//   createElement(notecard);
-// }
+const svg = d3.select('#bar-chart')
+    .attr("width", svgWidth)
+    .attr("height", svgHeight);
 
-// function createElement(notecard){
-//   const template = document.querySelector('#notecard-template');
-//   const clone = template.content.cloneNode(true);
-//   notecard.element = clone.querySelector('.notecard-container');
-//   const notecardListElement = document.querySelector('#notecard-list');
-//   notecardListElement.append(clone);
-//   updateElement(notecard);
-// }
+svg.selectAll("*").remove();
 
-// function updateElement(notecard){
-//   const noteImageElement = notecard.element.querySelector('.notecard-image');
-//   const noteTitleElement = notecard.element.querySelector('.notecard-title');
-//   const noteBodySummaryElement = notecard.element.querySelector('.notecard-summary-body');
-//   const noteTopicElement = notecard.element.querySelector('.notecard-topic');
-
-//   noteImageElement.src = notecard.noteImageURL;
-//   noteImageElement.alt = notecard.noteImageText;
-//   noteTitleElement.innerText = notecard.noteTitle;
-//   noteBodySummaryElement.innerText = notecard.noteSummaryBody;
-//   noteTopicElement.innerText = notecard.noteTopic;
-// }
+if (topicCounts.length > 0){
+    svg.selectAll("rect")
+        .data(topicCounts)
+        .enter()
+        .append("rect")
+        .attr("y", d => svgHeight - d.count * 20)
+        .attr("height", d => d.count * 20)
+        .attr("width", barWidth - barPadding)
+        .attr("x", (d,i) => i * barWidth)
+        .attr("fill", "#69b3a2");
+    
+    svg.selectAll("text")
+        .data(topicCounts)
+        .enter()
+        .append("text")
+        .attr("x", (d,i) => i * barWidth + (barWidth / 2))
+        .attr("y", svgHeight - 5)
+        .attr("text-anchor", "middle")
+        .text(d => d.topic)
+        .style("font-size", "10px");
+} else {
+    svg.append("text")
+        .attr("x", svgWidth / 2)
+        .attr("y", svgHeight / 2)
+        .attr("text-anchor", "middle")
+        .text("No posts available")
+        .style("font-size", "16px")
+        .style("fill", "#666");
+}
