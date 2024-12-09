@@ -22,7 +22,7 @@ How a user would interact with your website? For each step, briefly but clearly 
 
 
 From the Home Page, there are multiple actions you can take. We will go through the main actions here. NOTE: To get to the home page, click the words “Happiness Construct” on the top left of the screen. 
-1. Add a post to the blog
+1. **Add a post to the blog.**
 a. You are on the home page. Scroll down to the link at the bottom, which states, “Are you Samantha? If yes, click here!”. Click on this link. 
 b. You are now on the “Post-Maker” page. Input all necessary information such as the Title, Genre, Summary, Body, Image URL, and Image Alternate Text. You can input any text in the Title, Summary, Body, and Image Alternate Text fields, such as “Test1” or “Example1”. For the Genre, choose from the dropdown.  However, make sure that for the Image URL, you choose from one of the following URLs: 
 + ../assets/finalProjectAssets/sixofcrowsPicture.jpg
@@ -38,7 +38,7 @@ I have written a few example posts and included their inputs in the document lin
 c. Scroll to the bottom of the page. Click “Post!”
 d. You will then be navigated to the Home page. Scroll to the bottom. You will see a new blog post including the new information you just input. 
 
-2. Review a blog post and comment. 
+2. **Review a blog post and comment.**
 a. You are on the home page. Scroll to the bottom of the page. 
 b. Choose any individual post. Click on this post. 
 c. You will be directed to that post’s specific page. You are now able to view the full review and details of that book.
@@ -46,11 +46,11 @@ d. Scroll to the bottom of the page. You will see a box that states “Add Comme
 e. Click on this box. Type a comment. This can be any text, such as “Example1” or “Test1”. Then click the button “Post Comment!”.
 f. You will see that your comment has been posted right below the review/details of the book. 
 
-3. View the bar graph on the Home page.
+3. **View the bar graph on the Home page.**
 a. You are on the home page. Scroll down till you see the subtitle “What have I read and reviewed so far?”. 
 b. Review the information below this subtitle. You will see that the information beneath the subtitle, both in the text and graph, has changed after a post is uploaded (or deleted). This is dynamic. If you add five more book posts, this will also change.
 
-4. Delete a post from the blog.
+4. **Delete a post from the blog.**
 a. You are on the home page. Scroll to the bottom of the page. 
 b. Choose any individual post. Click on this post. 
 c. You will be directed to that post’s specific page. You are now able to view the full review and details of that book.
@@ -58,7 +58,7 @@ d. Scroll to the bottom of the page. You will see a button that states “Delete
 e. Click on this button. You will be taken back to the home page. 
 f. Scroll to the bottom of the home page. You will see that the post has been deleted. 
 
-5. Read the “About Me” page 
+5. **Read the “About Me” page.**
 a. You are on the home page. Look to the top right of the screen. 
 b. You will see text that states “About Me”. Click on this text. 
 c. This will take you to the “About Me” page. 
