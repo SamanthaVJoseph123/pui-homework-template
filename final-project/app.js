@@ -9,6 +9,17 @@ const topics = [
     "Literature"
 ];
 
+const topicColorMap = {
+    "Fantasy": "#238db0",
+    "Science Fiction": "#d9713d",
+    "Romance": "#de7ec9",
+    "Historical Fiction": "#1dc241",
+    "Horror": "#d93f21",
+    "Thriller": "#A52A2A",
+    "Mystery": "#8621d9",
+    "Literature": "#2a477a",
+};
+
 let x = localStorage.getItem('storedNotes');
 let notecardDictionaryString = JSON.parse(x);
 
@@ -30,7 +41,7 @@ for (let i=0; i < topics.length; i++) {
 
 // var dataset = [80,100,56,120,180,30,40,120,160];
 
-const svgWidth = 900, svgHeight = 250, barPadding = 2;
+const svgWidth = 900, svgHeight = 120, barPadding = 2;
 
 console.log("I AM HERE NOW!!");
 console.log(topicCounts);
@@ -59,7 +70,7 @@ svg.selectAll("rect")
     .attr("height", d => d.count * 20)
     .attr("width", barWidth - barPadding)
     .attr("x", (d,i) => i * barWidth)
-    .attr("fill", "#69b3a2");
+    .attr("fill", d => topicColorMap[d.topic]);
 
 svg.selectAll("text")
     .data(topicCounts)
@@ -70,4 +81,6 @@ svg.selectAll("text")
     .attr("text-anchor", "middle")
     .text(d => d.topic)
     .style("font-size", "12px")
-    .style("font-family", "'Source Serif 4', serif");
+    .style("font-family", "'Source Serif 4', serif")
+    .style("font-weight", "600")
+    .attr("fill", d=> d.count === 0 ? "black" :"white");

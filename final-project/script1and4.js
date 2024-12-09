@@ -175,3 +175,28 @@ function retrieveFromLocalStorageNUM() {
     }
     return removedPostNum;
 }
+
+let x1 = {};
+
+for (let key in notecardDictionary) {
+    let note = notecardDictionary[key];
+    let topic = note.noteTopic;
+
+    if (x1[topic]) {
+        x1[topic]++;
+    } else {
+        x1[topic] = 1;
+    }
+}
+console.log("LEMMY IS AWESOME");
+console.log("x1")
+let listItems = document.querySelectorAll('ul li');
+
+listItems.forEach(item => {
+    let text = item.textContent.trim();
+    if (x1[text]) {
+        item.textContent = `${text}: ${x1[text]} reviews`;
+    } else {
+        item.textContent = `${text}: 0 reviews`;
+    }
+ });
