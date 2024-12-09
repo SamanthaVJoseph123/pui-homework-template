@@ -28,6 +28,20 @@ if (notecardDictionary[noteIndex]){
     };
 
     document.querySelector(".post-full-body").textContent = notecardDictionary[noteIndex].notePostBody;
+
+    const topicColorMap = {
+        "Fantasy": "#238db0",
+        "Science Fiction": "#d9713d",
+        "Romance": "#de7ec9",
+        "Historical Fiction": "#1dc241",
+        "Horror": "#d93f21",
+        "Thriller": "#A52A2A",
+        "Mystery": "#8621d9",
+        "Literature": "#2a477a",
+    };
+    const topic1 = notecardDictionary[noteIndex].noteTopic;
+    const topicColor = topicColorMap[topic1];
+    document.querySelector('.post-topic').style.backgroundColor = topicColor;
 } else {
     console.error("note not found");
 }

@@ -30,7 +30,7 @@ for (let i=0; i < topics.length; i++) {
 
 // var dataset = [80,100,56,120,180,30,40,120,160];
 
-const svgWidth = 800, svgHeight = 250, barPadding = 5;
+const svgWidth = 900, svgHeight = 250, barPadding = 2;
 
 console.log("I AM HERE NOW!!");
 console.log(topicCounts);
@@ -69,5 +69,5 @@ svg.selectAll("text")
     .attr("y", svgHeight - 5)
     .attr("text-anchor", "middle")
     .text(d => d.topic)
-    .style("font-size", "15px")
+    .style("font-size", "12px")
     .style("font-family", "'Source Serif 4', serif");

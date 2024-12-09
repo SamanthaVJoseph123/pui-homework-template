@@ -71,12 +71,10 @@
     font-weight: 400;
     font-style: normal;
     font-size: 1.5rem;
-    background-color: rgb(106, 159, 210);
     margin: 5px 5px 5px 40px;
     padding: 10px 20px 10px 20px;
     border-radius: 25px;
-    border: 2px solid rgb(6, 103, 207);
-    color: black;
+    color: white;
     line-height: 1.75;
 }
 
@@ -127,7 +125,7 @@
     align-items: center;
     width: 90%;
     max-width: 1000px;
-    margin: 20px auto;
+    margin: 10px auto;
     padding:0;
 }
 
@@ -179,4 +177,6 @@ h2{
     font-family: "Source Serif 4", serif;
     font-weight: normal;
     margin-left: 19%;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }

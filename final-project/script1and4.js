@@ -136,6 +136,19 @@ function updateElement(notecard){
     noteBodySummaryElement.innerText = notecard.noteSummaryBody;
     noteTopicElement.innerText = notecard.noteTopic;
     noteLinkElement.href = notecard.noteLink;
+
+    const topicColorMap = {
+        "Fantasy": "#238db0",
+        "Science Fiction": "#d9713d",
+        "Romance": "#de7ec9",
+        "Historical Fiction": "#1dc241",
+        "Horror": "#d93f21",
+        "Thriller": "#A52A2A",
+        "Mystery": "#8621d9",
+        "Literature": "#2a477a",
+    };
+    const topicColor = topicColorMap[notecard.noteTopic];
+    noteTopicElement.style.backgroundColor = topicColor;
   }
 
 // only runs on the home page
