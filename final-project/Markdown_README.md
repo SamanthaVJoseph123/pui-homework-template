@@ -2,9 +2,12 @@
 
 Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) to make your writeup more organized, and you can preview your markdown file in VSCode [Markdown editing with Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview). 
 
-## Part 0: ADDITIONAL information
-I have created an Appendix at the bottom of FP4 to include the WAVE screenshots. 
-Screens to test on: Any Desktop / Mac frame will work. Additionally, Ipad size will also work. 
+## Part 0: Additional information
+- Deployed website: https://samanthavjoseph123.github.io/pui-homework-template/
+- Repository link: https://github.com/SamanthaVJoseph123/pui-homework-template
+
+- I have created an Appendix at the bottom of FP4 to include the WAVE screenshots.Screens to test on: Any Desktop / Mac frame will work. Ipad size will also work. 
+
 
 ## Part 1: Website Description
 Describe your website (300 words). 
@@ -95,7 +98,7 @@ One challenge I faced was using the D3.js library. I have not used this in the p
 
 Describe how you used Generative AI tools to create this final project (fill in the following information, write \~500 words in total).
 
-I only used ChatGPT for this assignment. I used it to learn about the specific tools of the D3.js library, such as creating bargraphs. I didn't input my code or data into ChatGPT and ask it to code a specific feature. That, I would input examples which I found online (through tutorials or youtube) and ask ChatGPT to explain each part of it. I would then ask if I implemented some change, such as different type of inputed data structure, then how would this change the current code? It was a great learning experience and I learned much about how to use the SVG/bar-chart feature of D3.js. It was really helpful in explaining small concepts such as "what does this term mean?" to "if we changed this key aspect, what would happen?". 
+I only used ChatGPT for this assignment. I used it to learn about the specific tools of the D3.js library, such as creating bargraphs. I didn't input my code or data into ChatGPT and ask it to code a specific feature. However, I would input examples which I found online (through tutorials or youtube) and ask ChatGPT to explain each part of it. I would then ask if I implemented some change, such as different type of inputed data structure, then how would this change the current code? It was a great learning experience and I learned much about how to use the SVG/bar-chart feature of D3.js. It was really helpful in explaining small concepts such as "what does this term mean?" to "if we changed this key aspect, what would happen?". 
 
 ### Usage Experiences by Project Aspects
 Feel free to edit the column \_ (other?) or add more columns if there's any other aspect in your project you've used the GenAI tools for.
