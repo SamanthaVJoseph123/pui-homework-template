@@ -13,7 +13,8 @@ if (storedNotes === null || storedNotes === undefined || storedNotes === "undefi
     storedNotes = JSON.stringify({});
 }
 let notecardDictionary = JSON.parse(storedNotes);
-
+// removedPostNum stores how many posts have been deleted
+// this value is necessary when calculated the index for each post
 let numberToStore = 0;
 let removedPostNum = localStorage.getItem('removedPostNum');
 if (removedPostNum == null || removedPostNum === undefined || removedPostNum === "undefined") {
@@ -21,9 +22,6 @@ if (removedPostNum == null || removedPostNum === undefined || removedPostNum ===
 } else {
     removedPostNum = Number(removedPostNum);
 }
-console.log("This is removedPostNum:");
-console.log(removedPostNum);
-
 
 // function to create a new notecard INSTANCE to add notecardDictionary OBJECT
 function addNotecardToDictionary(index, imageURL, imageText, title, summaryBody, postBody, topic, link) {
@@ -56,7 +54,7 @@ const imageURLElement = document.getElementById('imageURL');
 const imageALTElement = document.getElementById('imageALT');
 const buttonElement =  document.getElementById('btn1');
 
-function fun1() {
+function makePost() {
 
     // grab notecardDictionary from localStorage
     let notecardDictionaryString = localStorage.getItem('storedNotes');
@@ -108,7 +106,7 @@ function retrieveFromLocalStorage() {
         createElement(notecard);
     }
 }
-
+// creates the template layout to be filled
 function createElement(notecard){
     const template = document.querySelector('#notecard-template');
     const clone = template.content.cloneNode(true);
@@ -117,7 +115,7 @@ function createElement(notecard){
     notecardListElement.append(clone);
     updateElement(notecard);
   }
-  
+//   fills template layout with inputed information
 function updateElement(notecard){
     const noteImageElement = notecard.element.querySelector('.notecard-image');
     const noteTitleElement = notecard.element.querySelector('.notecard-title');
@@ -157,10 +155,11 @@ if (localStorage.getItem('storedNotes') != null && document.getElementById('note
 }
 
 // only runs on the Make Post page
+// setTimeout() ensures makePost() is done running and then calls goBackToHome
 if (document.getElementById('btn1') != null) {
     buttonElement.addEventListener('click', function() {
-        fun1();
-        setTimeout(goBackToHome, 100);
+        makePost();
+        setTimeout(goBackToHome, 100)
     });
  }
 
@@ -168,6 +167,7 @@ if (document.getElementById('btn1') != null) {
     window.location.href = "index.html"
  }
 
+//  Helps retrieve and store removedPostNum information
  function saveToLocalStorageNUM(removedPostNum) {
     localStorage.setItem('removedPostNum', removedPostNum.toString());
     console.log(removedPostNum);
@@ -182,9 +182,8 @@ function retrieveFromLocalStorageNUM() {
     }
     return removedPostNum;
 }
-
+// counts how many posts of each topic/genre are there
 let x1 = {};
-
 for (let key in notecardDictionary) {
     let note = notecardDictionary[key];
     let topic = note.noteTopic;
@@ -195,10 +194,9 @@ for (let key in notecardDictionary) {
         x1[topic] = 1;
     }
 }
-console.log("LEMMY IS AWESOME");
-console.log("x1")
+// selects list element in page
 let listItems = document.querySelectorAll('ul li');
-
+// inputs data into the list element
 listItems.forEach(item => {
     let text = item.textContent.trim();
     if (x1[text]) {

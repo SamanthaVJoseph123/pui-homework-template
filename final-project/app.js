@@ -20,10 +20,9 @@ const topicColorMap = {
     "Mystery": "#8621d9",
     "Literature": "#2a477a",
 };
-
 //translating local storage (string) into object
 let x = localStorage.getItem('storedNotes');
-let notecardDictionary = JSON.parse(x);
+let notecardDictionary1 = JSON.parse(x);
 
 let topicCounts = [];
 
@@ -33,8 +32,8 @@ for (let i=0; i < topics.length; i++) {
     const currentTopic = topics[i];
     let count = 0;
 
-    for (const key in notecardDictionary) {
-        const note = notecardDictionary[key];
+    for (const key in notecardDictionary1) {
+        const note = notecardDictionary1[key];
         if (note.noteTopic === currentTopic){
             count++;
         }
@@ -69,10 +68,13 @@ svg.selectAll("rect")
     // "y" is the y attribute of each rectange
     // determines where the bar starts vertically
     .attr("height", d => d.count * 20)
+    //d means that it goes through each datapoint
+    //.count is extracting a specific detail, like .datapoint
     .attr("width", barWidth - barPadding)
     .attr("x", (d,i) => i * barWidth)
     .attr("fill", d => topicColorMap[d.topic]);
 
+// similar process for the text
 svg.selectAll("text")
     .data(topicCounts)
     .enter()
@@ -85,3 +87,5 @@ svg.selectAll("text")
     .style("font-family", "'Source Serif 4', serif")
     .style("font-weight", "600")
     .attr("fill", d=> d.count === 0 ? "black" :"white");
+
+// condition ? What happens when true :What happens when false

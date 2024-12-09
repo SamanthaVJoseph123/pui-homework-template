@@ -1,19 +1,19 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-
+// gets the index for that specific note
+// http://127.0.0.1:5501/final-project/index3.html?note=8
+// ^^ in this case, index = 8
 const noteIndex = urlParams.get('note');
 console.log("This is the noteIndex:");
 console.log(noteIndex);
 
+// grabs notecard/post information from local storage
 let notecardDictionaryString = localStorage.getItem('storedNotes');
 let notecardDictionary = JSON.parse(notecardDictionaryString);
 console.log("This is the notecardDictionary");
 console.log(notecardDictionary);
 
-console.log("HELLO YOU ARE HERE");
-console.log(notecardDictionary[noteIndex]);
-console.log(notecardDictionary[noteIndex].title);
-
+// inputs all necessary information into page
 if (notecardDictionary[noteIndex]){
     document.querySelector(".post-title").textContent = notecardDictionary[noteIndex].noteTitle;
     document.querySelector(".post-topic").textContent = notecardDictionary[noteIndex].noteTopic;
@@ -51,6 +51,7 @@ if (document.getElementById('btn2') != null) {
     buttonElement.addEventListener('click', removePost);
  }
 
+//  Function identifies the index of the post and removes that instance from the object
 function removePost() {
     // notecardDictionary = retrieveFromLocalStorageDICT();
     delete notecardDictionary[noteIndex];
@@ -63,6 +64,7 @@ function removePost() {
     window.location.href = "index.html"
 }
 
+// functions to save and retrive removedPostNum to/from localStorage
 function saveToLocalStorageNUM(removedPostNum) {
     localStorage.setItem('removedPostNum', removedPostNum.toString());
     console.log(removedPostNum);
@@ -83,11 +85,12 @@ function saveToLocalStorageDICT() {
     localStorage.setItem('storedNotes', notecardDictionaryString);
 }
 
+// only runs on the Specific Post page
 if (document.getElementById('btn3') != null) {
     const buttonElement = document.getElementById('btn3');
     buttonElement.addEventListener('click', addComment);
  }
-
+// takes information from input box and adds into the "comment" field in the instance
  function addComment(){
     let theIndex = noteIndex;
     if (theIndex && notecardDictionary[theIndex]) {
@@ -109,7 +112,7 @@ if (document.getElementById('btn3') != null) {
         alert("note not found");
     }
  }
-
+// extracts the comments field from that specific instance and displays each comment
  function displayComments(){
     const theIndex = noteIndex;
     const commentsContainer = document.getElementById("comments-container");
