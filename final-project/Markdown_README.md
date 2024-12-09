@@ -2,93 +2,140 @@
 
 Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) to make your writeup more organized, and you can preview your markdown file in VSCode [Markdown editing with Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview). 
 
+## Part 0: ADDITIONAL information
+I have created an Appendix at the bottom of FP4 to include the WAVE screenshots. 
+
+Screens to test on: Any Desktop / Mac frame will work. Additionally, Ipad size will also work. 
 
 ## Part 1: Website Description
+Describe your website (300 words). 
+
+My website is a blog post about books. The purpose of this blog post is to post my opinions/reviews about a book and begin conversations with others. I can input information like the book title, its genre, my review, the book image, etc. and it will be posted on the website. I can delete a post too. Viewers who click on an individual post can then comment their thoughts. The target audience is interested readers who (1) want to learn more about a specific book, (2)  are looking for their next read, or (3) are looking to start a conversation regarding a specific book. 
+
+
+There is much information conveyed on my website. On the home page, I have a short introduction about myself. In text and a bar graph, I provide an overview of how many books I have read and reviewed, ordered by topic. If posts are present, they will appear in beige boxes. Each post on the home page contains the book title, its genre, a summary, and the book image. Once you click on an individual post, it takes you to a page with the full review of the book. If you click on the “About Me” in the top right corner, you can read a deeper introduction of myself. 
+
+
+My website is interesting and engaging in multiple ways. It is dynamic, If a user comments on a post or if I upload a book review, these changes are seen immediately. I also made sure to color-code all the topics to bring a pop of color and help users identify posts that they are interested in. I also included a graph on the homepage so users can easily see if their preferred genre is included in my blog post. 
 
 ## Part 2: User Interaction
-
 How a user would interact with your website? For each step, briefly but clearly state the interaction type & how we should reproduce it.
 
-1. Interaction type. Click on X on page Y / scroll on page X, etc.  
-2. 
+
+From the Home Page, there are multiple actions you can take. We will go through the main actions here. NOTE: To get to the home page, click the words “Happiness Construct” on the top left of the screen. 
+1. Add a post to the blog
+a. You are on the home page. Scroll down to the link at the bottom, which states, “Are you Samantha? If yes, click here!”. Click on this link. 
+b. You are now on the “Post-Maker” page. Input all necessary information such as the Title, Genre, Summary, Body, Image URL, and Image Alternate Text. You can input any text in the Title, Summary, Body, and Image Alternate Text fields, such as “Test1” or “Example1”. For the Genre, choose from the dropdown.  However, make sure that for the Image URL, you choose from one of the following URLs. 
+../assets/finalProjectAssets/sixofcrowsPicture.jpg
+../assets/finalProjectAssets/agoodgirlsguidetomurderPicture.png
+../assets/finalProjectAssets/bythebookPicture.png
+../assets/finalProjectAssets/illuminaePicture.png
+../assets/finalProjectAssets/luckofthetitanicPicture.png
+../assets/finalProjectAssets/oneofusislyingPicture.png
+../assets/finalProjectAssets/hollyPicture.png
+../assets/finalProjectAssets/thegreatgatsbyPicture.png
+I have written a few example posts and included their inputs in the document linked below. If you would like to take any text from here, please feel free to do so. This may save some time on your end. Link to document: https://docs.google.com/document/d/1GJwki4DMki1D_mag58ftKIUjO8Ik0lVvPZ_K3xpoiu8/edit?usp=sharing
+c. Scroll to the bottom of the page. Click “Post!”
+d. You will then be navigated to the Home page. Scroll to the bottom. You will see a new blog post including the new information you just input. 
+
+2. Review a blog post and comment. 
+a. You are on the home page. Scroll to the bottom of the page. 
+b. Choose any individual post. Click on this post. 
+c. You will be directed to that post’s specific page. You are now able to view the full review and details of that book.
+d. Scroll to the bottom of the page. You will see a box that states “Add Comment here”. 
+e. Click on this box. Type a comment. This can be any text, such as “Example1” or “Test1”. Then click the button “Post Comment!”.
+f. You will see that your comment has been posted right below the review/details of the book. 
+
+3. View the bar graph on the Home page.
+a. You are on the home page. Scroll down till you see the subtitle “What have I read and reviewed so far?”. 
+b. Review the information below this subtitle. You will see that the information beneath the subtitle, both in the text and graph, has changed after a post is uploaded (or deleted). This is dynamic. If you add five more book posts, this will also change.
+
+4. Delete a post from the blog.
+a. You are on the home page. Scroll to the bottom of the page. 
+b. Choose any individual post. Click on this post. 
+c. You will be directed to that post’s specific page. You are now able to view the full review and details of that book.
+d. Scroll to the bottom of the page. You will see a button that states “Delete Post!”. 
+e. Click on this button. You will be taken back to the home page. 
+f. Scroll to the bottom of the home page. You will see that the post has been deleted. 
+
+5. Read the “About Me” page 
+a. You are on the home page. Look to the top right of the screen. 
+b. You will see text that states “About Me”. Click on this text. 
+c. This will take you to the “About Me” page. 
+
 
 ## Part 3: External Tool
 
 Describe what important external tool you used (JavaScript library, Web API, animations, or other). Following the bulleted list format below, reply to each of the prompts.
 
-1. Name of tool1  
-   * Why did you choose to use it over other alternatives? (2 sentences max)  
+1. D3.js
+   * I chose D3.js because it was very beginner-friendly and contained many tutorials on YouTube to watch. The professor had recommended this in his data visualization lecture, and I did more research into the library and saw that it was able to complete the task I wanted.  
    * How you used it? (2 sentences max)  
+I used this library to visualize how many book posts there are of each genre. So if there are no posts of romance books, the bar will be at 0, while if there are five fantasy books, the bar will be taller at 5. 
    * What does it add to your website? (2 sentences max)  
-2. Name of tool2
+This adds a great visualization element to my blog post because it helps users determine if what they are looking for is present on the website. For example, if they only want to read Science Fiction, but see that the number of posts is 0 through the graph, then they will leave the blog.
+2. localStorage
+   * I chose this because I had a small amount of data needing to be stored. We also used localStorage in our homeworks, so I was familiar with using this API.  
+   * How you used it? (2 sentences max)  
+I used localStorage to hold data regarding all the blog posts. Each blog post was an instance of an object, and each blog post contained data such as the title, genre, summary, body message, comments, image, and image alternate text. 
+   * What does it add to your website? (2 sentences max)  
+With this, I can efficiently store, retrieve, visualize, and delete this post information with the click of a button. 
+
 
 ## Part 4: Design Iteration
 
-Describe how you iterated on your prototypes, if at all, including any changes you made to your original design while you were implementing your website and the rationale for the changes. (4-8 sentences max)
+Many changes and iterations have been done. To use more libraries, I had to learn how to use the D3.js library and input my already existing data into this action. Another great change was regarding how I was storing my data. Previously, I stored a variable called LocalStorage1 (an array) and another variable called LocalStorage2 (an object). One was used for displaying the post information on the home page, while the other was used for displaying the post information on the specific post page. However, this was redundant, as much information overlapped the two data structures. Thus, I decided to combine the two into LocalStorage one (an object) and only reference this, which made my code cleaner and more efficient. 
 
 ## Part 5: Implementation Challenge
-
 What challenges did you experience in implementing your website? (2-4 sentences max)
+
+One challenge I faced was using the D3.js library. I have not used this in the past and have not learned this in class. Thus, I watched multiple tutorials (such as this one: https://www.youtube.com/watch?v=C4t6qfHZ6Tw) to help me understand how to use this tool. 
 
 ## Part 6: Generative AI Use and Reflection
 
 Describe how you used Generative AI tools to create this final project (fill in the following information, write \~500 words in total).
 
-Document your use of all GenAI tools — ChatGPT, Copilot, Claude, Cursor, etc. using the template below. Add/Delete rows or bullet points if needed, and replace Tool1/Tool2 with the name of the tool.
+I only used ChatGPT for this assignment. I used it to learn about the specific tools of the D3.js library, such as creating bargraphs. I didn't input my code or data into ChatGPT and ask it to code a specific feature. That, I would input examples which I found online (through tutorials or youtube) and ask ChatGPT to explain each part of it. I would then ask if I implemented some change, such as different type of inputed data structure, then how would this change the current code? It was a great learning experience and I learned much about how to use the SVG/bar-chart feature of D3.js. It was really helpful in explaining small concepts such as "what does this term mean?" to "if we changed this key aspect, what would happen?". 
 
 ### Usage Experiences by Project Aspects
-
 Feel free to edit the column \_ (other?) or add more columns if there's any other aspect in your project you've used the GenAI tools for.
 
-For the following aspects of your project, edit the corresponding table cell to answer:
-- *Usage*: Whether you used / did not use this tool for the aspect. Enter [Yes/No]
-- *Productivity*: Give a rating on whether this tool makes your productivity for X aspect [1-Much Reduced, 2-Reduced, 3-Slightly Reduced, 4-Not Reduced nor Improved, 5-Slightly Improved, 6-Improved, 7-Much Improved].
 
 | Tool Name | Ratings | design | plan | write code | debug | \_ (other?) |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| Tool1 | Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
-| Tool1 | Productivity | 1~7 | 1~7 | 1~7 | 1~7 | 1~7 |
-| Tool2| Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
-| Tool2 | Productivity | 1~7 | 1~7 | 1~7 | 1~7 | 1~7 |
-
+| ChatGPT | Usage | No | Yes | No | No | No |
+| Tool1 | Productivity | 1 | 7 | 1 | 1 | 1 |
 
 ### Usage Reflection
 
 > Impact on your design and plan 
-* It matched my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
-  1. Tool1: 
-  2. Tool2:
-* It did not match my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
-  1. Tool1: 
-  2. Tool2:
-* GenAI tool did/did not influence my final design and implementation plan because … For example, 
-  1. Tool1: 
-  2. Tool2:
+* It matched my expectations and plan in [FP2](#generative-ai-use-plan) in that it helped me learn how to use the D3.js tools. For example, 
+  1. ChatGPT: I was able to ask questions such as "How do you input data into a bar chart", and it was able to provide me with a great example and explanation. 
+* It did not match my expectations and plan in [FP2](#generative-ai-use-plan). For example, 
+Not Applicable.
+* GenAI tool did influence my final design and implementation plan because it helped me realize how I can present my data for the users. For example, 
+  1. ChatGPT: I learned that I can display the different counts of a certain genre for users to see. I also learned that this can be dynamically changed if a post is deleted or added. 
 
 > Use patterns
-* I accepted the generations when …  For example, 
-  1. Tool1: this tool once suggested … and I adjusted my design according to the suggestion because … 
-  2. Tool2: 
-* I critiqued/evaluated the generated suggestions by … For example, 
-  1. Tool1: this tool once suggested … but I modified/rejected the suggestion because … 
-  2. Tool2: 
-
+* I accepted the generations when they seemed to be sufficient. For example, 
+  1. ChatGPT: I asked ChatGPT about general topics and techniques. Once I read through and understood the concepts, then I was able to edit it depending on my data and preferences. 
+* I critiqued/evaluated the generated suggestions by reviewing them and prompting another question if it was unclear. For example, 
+  1. ChatGPT: If its response was unclear or did not take into consideration a certain aspect of my question, I would ask the question again and voice my modification.
 
 > Pros and cons of using GenAI tools
 * Pros
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: Great tool for learning. It taught me much about the D3.js library and how to create bar charts. I was able to ask specific questions regarding the code it provided, and it provided great explanations. 
 * Cons
-  1. Tool1: 
-  2. Tool2:
-
+  1. ChatGPT: It can be confusing to understand, sometimes. It may use complex language or propertiies which I am unfamiliar with. However, I make sure in the next prompt to ask it to use similar language and explain any unfamiliar areas of the code. 
 
 ### Usage Log
 
 Document the usage logs (prompts and chat history links) for the GenAI tools you used. Some tools may not have an easy way to share usage logs, just try your best! Some instructions for different tools:
 
-1. [ChatGPT](https://help.openai.com/en/articles/7925741-chatgpt-shared-links-faq) / [Gemini](https://support.google.com/gemini/answer/13743730?hl=en&co=GENIE.Platform%3DDesktop): share the anonymous link to all of your chat histories relevant to this project
-2. [GitHub Copilot (VSCode)](https://code.visualstudio.com/docs/copilot/copilot-chat#:~:text=You%20can%20export%20all%20prompts%20and%20responses%20for%20a%20chat%20session%20in%20a%20JSON%20file%20with%20the%20Chat%3A%20Export%20Session...%20command%20(workbench.action.chat.export)%20in%20the%20Command%20Palette.): export chat histories relevant to this project.
+Link: https://chatgpt.com/share/67574ce6-5734-8007-91a1-212effe2e612
+
+### Appendix
+
 
 ---
 
@@ -97,12 +144,10 @@ Document the usage logs (prompts and chat history links) for the GenAI tools you
 Document the changes and progress of your project. How have you followed or changed your implementation & GenAI use plan and why? Remember to commit your code to save your progress.
 
 ## Implementation Plan Updates
-
-- [ ] ...
+- Much changed regarding my plan for my website. I previously was going to implement a backend database for long-term storage. However, I later switched to using a D3.js library for another feature (data visualization). This is because there were more resources avaiable regarding D3.js than using Firebase (the backend database I was planning on using).
 
 ## Generative AI Use Plan Updates
-
-- [ ] ...
+- Nothing changed regarding my use of GenAI. 
 
 Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-generative-ai-use-and-reflection).
 
