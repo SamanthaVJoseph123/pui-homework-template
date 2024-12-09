@@ -98,7 +98,6 @@ function saveToLocalStorage() {
 
 function retrieveFromLocalStorage() {
     let notecardDictionaryString = localStorage.getItem('storedNotes');
-    console.log("HELLO");
     console.log(notecardDictionaryString);
     notecardDictionary = JSON.parse(notecardDictionaryString);
 
