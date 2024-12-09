@@ -18,53 +18,51 @@
 
   <body>
 
-    <div class="top-page-container">
+    <header class="top-page-container">
       <a class="left-button" href="./index.html">Happiness Construct</a>
       <a class="right-button" href="./index2.html">About Me</a>
-    </div>
+    </header>
 
-    <section class="top-container">
+    <main>
+      <section class="top-container">
+        <h1>Welcome to the Post-Maker!</h1>
+        <h3>Please enter in all the necessary information for your post. Then, click submit! Your post will then appear on our home page and can be read by all!</h3>
+      </section>
 
-      <h1>Welcome to the Post-Maker!</h1>
-      <h3>Please enter in all the necessary information for your post. Then, click submit! Your post will then appear on our home page and can be ready by all!</h3>
+      <!-- textboxes and drop downs for getting user input -->
+      <form class="outer-container">
+          <h2 class="sub-title">Post Details</h2>
+          
+          <label for="title">Title:</label>
+          <input type="text" id="title" placeholder="Add Title Here" maxlength="100">
 
-    </section>
+          <label for="topic">Genre:</label>
+          <select id="topic">
+            <option value="Fantasy">Fantasy</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Romance">Romance</option>
+            <option value="Historical Fiction">Historical Fiction</option>
+            <option value="Horror">Horror</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Literature">Literature</option>
+          </select>
 
-    <!-- textboxes and drop downs for getting user input -->
-    <article class="outer-container">
-        <h2 class="sub-title">Post Details</h2>
-        
-        <label for="title">Title:</label>
-        <input type="text" id="title" placeholder="Add Title Here" maxlength="100">
+          <label for="summary">Summary:</label>
+          <textarea id="summary" placeholder="Add Summary Here" maxlength="1000"></textarea>
 
-        <label for="topic">Genre:</label>
-        
-         <select id="topic">
-          <option value="Fantasy">Fantasy</option>
-          <option value="Science Fiction">Science Fiction</option>
-          <option value="Romance">Romance</option>
-          <option value="Historical Fiction">Historical Fiction</option>
-          <option value="Horror">Horror</option>
-          <option value="Thriller">Thriller</option>
-          <option value="Mystery">Mystery</option>
-          <option value="Literature">Literature</option>
-         </select>
+          <label for="body">Body:</label>
+          <textarea id="body" placeholder="Add Body Here" maxlength="10000"></textarea>
 
-        <label for="summary">Summary:</label>
-        <textarea id="summary" placeholder="Add Summary Here" maxlength="1000"></textarea>
+          <label for="imageURL">Image URL:</label>
+          <input type="text" id="imageURL" placeholder="Add Image URL Here" maxlength="1000">
 
-        <label for="body">Body:</label>
-        <textarea id="body" placeholder="Add Body Here" maxlength="10000"></textarea>
+          <label for="imageALT">Image Alternate Text:</label>
+          <input type="text" id="imageALT" placeholder="Add Image Alternate Text Here" maxlength="1000">
 
-        <label for="imageURL">Image URL:</label>
-        <input type="text" id="imageURL" placeholder="Add Image URL Here" maxlength="1000">
-
-        <label for="imageALT">Image Alternate Text:</label>
-        <input type="text" id="imageALT" placeholder="Add Image Alternate Text Here" maxlength="1000">
-
-        <input type="button" id= "btn1" value="Post!">
-
-    </article>
+          <input type="button" id= "btn1" value="Post!">
+        </form>
+    </main>
   </body>
 </html>
 

@@ -18,40 +18,41 @@
 
   <body>
 
-    <div class="top-page-container">
+    <header class="top-page-container">
       <a class="left-button" href="./index.html">Happiness Construct</a>
       <a class="right-button" href="./index2.html">About Me</a>
-    </div>
+    </header>
 
     <!-- Based off of which post was clicked, this page is dynamically filled with a specific post's information -->
-    <div class="outermost-container">
-      <div class="outer-post-container">
-        <div class="inner-post-container">
+    <main class="outermost-container">
+      <article class="outer-post-container">
+        <section class="inner-post-container">
           <div class="detail-container">
-            <div class="title-container">
+            <header class="title-container">
               <div class="post-title"> Title </div>
               <div class="post-topic"> Topic </div>
-            </div>
-            <div class="post-full-body"> Post Body </div>
+            </header>
+            <p class="post-full-body"> Post Body </p>
           </div>
           <img class="post-image" src="" alt="" >
-        </div>
-      </div>
+        </section>
+      </article>
 
-      <h2>Comments:</h2>
-      <div id="comments-container" class="comments-container">
+      <section>
+        <h2>Comments:</h2>
+        <div id="comments-container" class="comments-container"></div>
+      </section>
 
-      </div>
-
-
-      <div class="comment-input">
-        <!-- comment input here -->
+      <section class="comment-input">
         <textarea id="comment" placeholder="Add Comment Here" maxlength="10000"></textarea>
         <input type="button" id="btn3" value="Post Comment!">
-      </div>  
+      </section>  
 
-      <input type="button" id="btn2" value="Delete Post!">
-    </div>
+      <section class="delete-post">
+        <input type="button" id="btn2" value="Delete Post!">
+      </section>
+
+    </main>
   </body>
 </html>
 
