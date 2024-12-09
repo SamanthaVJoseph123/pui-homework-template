@@ -4,7 +4,6 @@ Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/
 
 ## Part 0: ADDITIONAL information
 I have created an Appendix at the bottom of FP4 to include the WAVE screenshots. 
-
 Screens to test on: Any Desktop / Mac frame will work. Additionally, Ipad size will also work. 
 
 ## Part 1: Website Description
@@ -135,7 +134,7 @@ Document the usage logs (prompts and chat history links) for the GenAI tools you
 Link: https://chatgpt.com/share/67574ce6-5734-8007-91a1-212effe2e612
 
 ### Appendix
-
+There were multiple, large screenshots to be included here. I compliled them on a google doc: https://docs.google.com/document/d/1ZZRyaNikXMD3FCHl3Dbn8R4X0nasA9cNsBwErVsz3Hw/edit?usp=sharing
 
 ---
 
