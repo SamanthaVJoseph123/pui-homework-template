@@ -158,7 +158,14 @@ if (localStorage.getItem('storedNotes') != null && document.getElementById('note
 
 // only runs on the Make Post page
 if (document.getElementById('btn1') != null) {
-    buttonElement.addEventListener('click', fun1);
+    buttonElement.addEventListener('click', function() {
+        fun1();
+        setTimeout(goBackToHome, 100);
+    });
+ }
+
+ function goBackToHome(){
+    window.location.href = "index.html"
  }
 
  function saveToLocalStorageNUM(removedPostNum) {
