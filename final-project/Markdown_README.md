@@ -24,15 +24,16 @@ How a user would interact with your website? For each step, briefly but clearly 
 From the Home Page, there are multiple actions you can take. We will go through the main actions here. NOTE: To get to the home page, click the words “Happiness Construct” on the top left of the screen. 
 1. Add a post to the blog
 a. You are on the home page. Scroll down to the link at the bottom, which states, “Are you Samantha? If yes, click here!”. Click on this link. 
-b. You are now on the “Post-Maker” page. Input all necessary information such as the Title, Genre, Summary, Body, Image URL, and Image Alternate Text. You can input any text in the Title, Summary, Body, and Image Alternate Text fields, such as “Test1” or “Example1”. For the Genre, choose from the dropdown.  However, make sure that for the Image URL, you choose from one of the following URLs. 
-../assets/finalProjectAssets/sixofcrowsPicture.jpg
-../assets/finalProjectAssets/agoodgirlsguidetomurderPicture.png
-../assets/finalProjectAssets/bythebookPicture.png
-../assets/finalProjectAssets/illuminaePicture.png
-../assets/finalProjectAssets/luckofthetitanicPicture.png
-../assets/finalProjectAssets/oneofusislyingPicture.png
-../assets/finalProjectAssets/hollyPicture.png
-../assets/finalProjectAssets/thegreatgatsbyPicture.png
+b. You are now on the “Post-Maker” page. Input all necessary information such as the Title, Genre, Summary, Body, Image URL, and Image Alternate Text. You can input any text in the Title, Summary, Body, and Image Alternate Text fields, such as “Test1” or “Example1”. For the Genre, choose from the dropdown.  However, make sure that for the Image URL, you choose from one of the following URLs: 
+(../assets/finalProjectAssets/sixofcrowsPicture.jpg)
+(../assets/finalProjectAssets/agoodgirlsguidetomurderPicture.png)
+(../assets/finalProjectAssets/bythebookPicture.png)
+(../assets/finalProjectAssets/illuminaePicture.png)
+(../assets/finalProjectAssets/luckofthetitanicPicture.png)
+(../assets/finalProjectAssets/oneofusislyingPicture.png)
+(../assets/finalProjectAssets/hollyPicture.png)
+(../assets/finalProjectAssets/thegreatgatsbyPicture.png)
+
 I have written a few example posts and included their inputs in the document linked below. If you would like to take any text from here, please feel free to do so. This may save some time on your end. Link to document: https://docs.google.com/document/d/1GJwki4DMki1D_mag58ftKIUjO8Ik0lVvPZ_K3xpoiu8/edit?usp=sharing
 c. Scroll to the bottom of the page. Click “Post!”
 d. You will then be navigated to the Home page. Scroll to the bottom. You will see a new blog post including the new information you just input. 
