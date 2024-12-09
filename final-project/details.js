@@ -1,4 +1,4 @@
-const  notecardDictionaryString = {
+const  notecardDictionary = {
     1: {
         "noteImageURL": "blah.com",
         "noteImageText": "blah1",
