@@ -19,71 +19,70 @@
   </title>
 
   <body>
-    <div class="top-fold-container">
-      <img class="top-fold-image-container" src="../assets/finalProjectAssets/background4.jpg" alt="Image Placeholder" >
-
-      <div>
+    <header class="top-fold-container">
+      <img class="top-fold-image-container" src="../assets/finalProjectAssets/background4.jpg" alt="Background image filled with images of books. Picture incldues quote from Lloyd Alexander stating Keep Reading. It's one of the most marvelous adventures that anyone can have. " >
+      <nav>
         <a class="top-fold-left-button" href="./index.html">Happiness Construct</a>
         <a class="top-fold-right-button" href="./index2.html">About Me</a>
-      </div>
+      </nav>
+    </header>
 
-    </div>
-
-    <div class="outer-intro-container">
-    <!-- Introduction of myself -->
-      <div class="inner-intro-container">
-        <h2 class="inner-intro-title-box">Welcome to my blog. I'm Samantha. </h2>
-        <p class="inner-intro-text-box">Thanks for stopping by! I am someone who has found comfort in books, and love sharing my journey, insights, and reflections with you through this blog post. Stay a while, read a bit, and comment your thoughts!</p>
-      </div>
-
-      <img class = "inner-intro-image-box" src="../assets/finalProjectAssets/updatedBookPic.png" alt="Image Placeholder" >
-    </div>
-
-    <!-- Overview of how many posts are present -->
-    <section>
-      <h1>What have I read and reviewed so far?</h1>
-      <ul>
-        <li>Fantasy</li>
-        <li>Science Fiction</li>
-        <li>Romance</li>
-        <li>Historical Fiction</li>
-        <li>Horror</li>
-        <li>Thriller</li>
-        <li>Mystery</li>
-        <li>Literature</li>
-      </ul>
-    </section>
-    <!-- SVG Bar Chart below -->
-    <div>
-      <svg id="bar-chart"></svg>
-    </div>
-
-    <!-- Template technique used to create individual posts -->
-    <div id="notecard-list">
-      <template id="notecard-template">
-        <div class="notecard-container">
-          <a class="notecard-link" href="">
-            <div class="notecard-outer-box">
-              <div class="notecard-inner-box">
-                <div class="notecard-header">
-                  <div class="notecard-title">
-                  </div>
-                  <div class="notecard-topic">
-                  </div>
-                </div>
-                <div class="notecard-summary-body">
-                </div>
-                <div class="notecard-footer">
-                </div>
-              </div>
-              <img class="notecard-image" src="" alt="" >
-            </div>
-          </a>
+    <main>
+      <section class="outer-intro-container">
+      <!-- Introduction of myself -->
+        <div class="inner-intro-container">
+          <h2 class="inner-intro-title-box">Welcome to my blog. I'm Samantha. </h2>
+          <p class="inner-intro-text-box">Thanks for stopping by! I am someone who has found comfort in books, and love sharing my journey, insights, and reflections with you through this blog post. Stay a while, read a bit, and comment your thoughts!</p>
         </div>
-      </template>
-    </div>
+        <img class = "inner-intro-image-box" src="../assets/finalProjectAssets/updatedBookPic.png" alt="Drawing of a single book open" >
+      </section>
 
-    <a href="./index4.html">Are you Samantha? If yes, click here! </a>
+      <!-- Overview of how many posts are present -->
+      <section>
+        <h1>What have I read and reviewed so far?</h1>
+        <ul>
+          <li>Fantasy</li>
+          <li>Science Fiction</li>
+          <li>Romance</li>
+          <li>Historical Fiction</li>
+          <li>Horror</li>
+          <li>Thriller</li>
+          <li>Mystery</li>
+          <li>Literature</li>
+        </ul>
+      </section>
+      <!-- SVG Bar Chart below -->
+      <section>
+        <svg id="bar-chart" aria-label="Bar chart showing how many of each genre I have reviewed and posted a review on"></svg>
+      </section>
+
+      <!-- Template technique used to create individual posts -->
+      <div id="notecard-list">
+        <template id="notecard-template">
+          <div class="notecard-container">
+            <a class="notecard-link" href="">
+              <div class="notecard-outer-box">
+                <div class="notecard-inner-box">
+                  <div class="notecard-header">
+                    <div class="notecard-title">
+                    </div>
+                    <div class="notecard-topic">
+                    </div>
+                  </div>
+                  <div class="notecard-summary-body">
+                  </div>
+                  <div class="notecard-footer">
+                  </div>
+                </div>
+                <img class="notecard-image" src="" alt="" >
+              </div>
+            </a>
+          </div>
+        </template>
+      </div>
+
+      <a href="./index4.html">Are you Samantha? If yes, click here! </a>
+  </main>
   </body>
 </html>
 
